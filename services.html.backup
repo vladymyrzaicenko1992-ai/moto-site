@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Послуги перевезення мотоциклів — MotoEvakuator</title>
+    <meta name="description" content="Повний перелік послуг з перевезення мотоциклів по Україні. Евакуація, міжміські перевезення, транспортування спортбайків та ATV.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Послуги перевезення мотоциклів — MotoEvakuator" />
+    <meta property="og:description" content="Професійні послуги з перевезення мотоциклів по всій Україні. Евакуація, міжміські перевезення, транспортування спортбайків та ATV." />
+    <meta property="og:image" content="https://motoevakuator.shop/images/hero-main.jpg" />
+    <meta property="og:url" content="https://motoevakuator.shop/services.html" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Design System -->
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    
+    <!-- Page-specific styles -->
+    <style>
+        /* ===== PAGE HERO ===== */
+        .page-hero {
+            min-height: 60vh;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+                url('images/hero-main.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 100px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .breadcrumb a {
+            color: var(--text-muted);
+            transition: color var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumb span {
+            color: var(--accent);
+        }
+
+        /* ===== SERVICES DETAILS ===== */
+        .service-detail-card {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .service-detail-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+            position: relative;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: var(--text-muted);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 1rem 0;
+            font-family: var(--font-head);
+        }
+
+        .price-note {
+            color: var(--text-dim);
+            font-size: 0.875rem;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
+            transition: color var(--transition);
+        }
+
+        .faq-question:hover {
+            color: var(--accent);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+            padding-top: 1rem;
+        }
+
+        /* ===== STATS SECTION ===== */
+        .stats-section {
+            background-color: var(--surface);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            font-family: var(--font-head);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta {
+            text-align: center;
+        }
+
+        /* ===== RESPONSIVE ADJUSTMENTS ===== */
+        @media (max-width: 768px) {
+            .service-detail-image {
+                height: 200px;
+            }
+            
+            .stat-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header mount point -->
+    <div id="header-mount"></div>
+
+    <main>
+        <!-- ===== PAGE HERO ===== -->
+        <section class="page-hero section">
+            <div class="container">
+                <div class="reveal">
+                    <div class="breadcrumb">
+                        <a href="index.html">Головна</a> / <span>Послуги</span>
+                    </div>
+                    <h1>Наші послуги</h1>
+                    <p>Комплексний підхід до перевезення мотоциклів будь-якого типу по всій Україні. Від евакуації після ДТП до міжміських перевезень.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICES DETAILS ===== -->
+        <section class="section">
+            <div class="container">
+                <div class="grid-2">
+                    <!-- Евакуація мотоцикла -->
+                    <div class="card service-detail-card reveal">
+                        <div class="service-detail-image" style="background-image: url('images/moto2_resized/transport-process.png');"></div>
+                        <div class="card-body">
+                            <h3>Евакуація мотоцикла</h3>
+                            <p>Термінова допомога при ДТП, поломці або необхідності перевезення мотоцикла в сервіс.</p>
+                            
+                            <ul class="service-features">
+                                <li>Виїзд за 60-90 хвилин у Києві</li>
+                                <li>Професійне кріплення без пошкоджень</li>
+                                <li>Доставка до будь-якої точки міста</li>
+                                <li>Цілодобовий виклик</li>
+                                <li>Документальне оформлення</li>
+                            </ul>
+                            
+                            <a href="tel:+380971008810" class="btn btn-primary">Замовити</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Міжміське перевезення -->
+                    <div class="card service-detail-card reveal">
+                        <div class="service-detail-image" style="background-image: url('images/moto2_resized/photo_2025-10-17_12-08-56.jpg');"></div>
+                        <div class="card-body">
+                            <h3>Міжміське перевезення</h3>
+                            <p>Безпечна доставка мотоцикла між містами України. Від Києва до Львова, Одеси, Харкова та інших міст.</p>
+                            
+                            <ul class="service-features">
+                                <li>Повідомлення про прибуття</li>
+                                <li>Страхування вантажу</li>
+                                <li>Закритий фургон Ford Transit</li>
+                                <li>Досвідчений водій</li>
+                                <li>Фото-звіт про стан</li>
+                            </ul>
+                            
+                            <a href="tel:+380971008810" class="btn btn-primary">Замовити</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Перевезення спортбайків -->
+                    <div class="card service-detail-card reveal">
+                        <div class="service-detail-image" style="background-image: url('images/moto2_resized/bmw-m-1000-rr.png');"></div>
+                        <div class="card-body">
+                            <h3>Перевезення спортбайків</h3>
+                            <p>Спеціалізоване перевезення спортивних мотоциклів з додатковим захистом кріплень та кузова.</p>
+                            
+                            <ul class="service-features">
+                                <li>М'які кріплення для фар та пластику</li>
+                                <li>Додатковий захист від подряпин</li>
+                                <li>Особлива увага до аеродинамічних елементів</li>
+                                <li>Досвід з M1000RR, Panigale, R1 та іншими</li>
+                                <li>Температурний контроль у фургоні</li>
+                            </ul>
+                            
+                            <a href="tel:+380971008810" class="btn btn-primary">Замовити</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Перевезення ATV/квадроциклів -->
+                    <div class="card service-detail-card reveal">
+                        <div class="service-detail-image" style="background-image: url('images/moto2_resized/atv-all-terrain-vehicle.png');"></div>
+                        <div class="card-body">
+                            <h3>Перевезення ATV/квадроциклів</h3>
+                            <p>Транспортування позашляховиків, багі та іншої спецтехніки з особливими вимогами до кріплення.</p>
+                            
+                            <ul class="service-features">
+                                <li>Спеціальні рампи для завантаження</li>
+                                <li>Потужні кріплення для важкої техніки</li>
+                                <li>Захист від перекидання</li>
+                                <li>Можливість перевезення двох одиниць</li>
+                                <li>Досвід з Segway, Can-Am, Polaris</li>
+                            </ul>
+                            
+                            <a href="tel:+380971008810" class="btn btn-primary">Замовити</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Price Note -->
+                <div class="price-note reveal">
+                    <p>Точну ціну розрахує менеджер після консультації.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FAQ SECTION ===== -->
+        <section class="section section-dark">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2>Поширені запитання</h2>
+                    <p>Відповіді на найчастіші питання про перевезення мотоциклів</p>
+                </div>
+                
+                <div class="faq-container">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Скільки часу займає перевезення мотоцикла?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Час доставки залежить від відстані та обраної терміновості. Стандартне перевезення між містами займає 3-7 днів, термінове — 24-48 годин. У межах одного міста доставка займає 2-4 години.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 2 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Як закріплюється мотоцикл у фургоні?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ми використовуємо професійні ремені з натяжними механізмами та м'які прокладки для захисту. Мотоцикл фіксується в 4 точках: переднє та заднє колесо, рама з обох боків. Для спортбайків додатково використовуємо захист пластику та фар.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 3 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Чи потрібно розминати мотоцикл перед перевезенням?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ні, ми перевозимо мотоцикли в зібраному стані. Виняток становлять тільки окремі елементи, які можуть бути демонтовані за вашим бажанням (дзеркала, кофри тощо).</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 4 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Чи є страхування при перевезенні?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Так, кожне перевезення страхується на повну вартість мотоцикла. Страховий поліс оформлюється перед початком транспортування.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 5 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Чи можна відстежити маршрут перевезення?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Так, ми повідомляємо про ключові етапи маршруту. Ви отримаєте інформацію про прибуття та доставку.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 6 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Як оплачується послуга?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Оплата здійснюється готівкою водію при отриманні мотоцикла або банківським переказом. Для постійних клієнтів можлива оплата після отримання мотоцикла.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== STATS SECTION ===== -->
+        <section class="stats-section section">
+            <div class="container">
+                <div class="grid-4">
+                    <div class="stat-card reveal">
+                        <div class="stat-icon">🚐</div>
+                        <div class="stat-number" data-count="500">500+</div>
+                        <div class="stat-text">перевезень</div>
+                    </div>
+                    
+                    <div class="stat-card reveal">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-number" data-count="4">4</div>
+                        <div class="stat-text">роки досвіду</div>
+                    </div>
+                    
+                    <div class="stat-card reveal">
+                        <div class="stat-icon">📍</div>
+                        <div class="stat-number" data-count="15">15+</div>
+                        <div class="stat-text">міст України</div>
+                    </div>
+                    
+                    <div class="stat-card reveal">
+                        <div class="stat-icon">🛡️</div>
+                        <div class="stat-number">100%</div>
+                        <div class="stat-text">страхування</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FINAL CTA ===== -->
+        <section class="final-cta section section-dark">
+            <div class="container">
+                <h2 class="text-center">Готові замовити перевезення?</h2>
+                <p class="text-center">Зв'яжіться з нами для детальної консультації та розрахунку точної вартості</p>
+                
+                <div class="cta-buttons text-center">
+                    <a href="https://t.me/motoyevakuator" class="btn btn-primary btn-lg">Telegram</a>
+                    <a href="tel:+380971008810" class="btn btn-ghost btn-lg">Телефон</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer mount point -->
+    <div id="footer-mount"></div>
+
+    <!-- JavaScript -->
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

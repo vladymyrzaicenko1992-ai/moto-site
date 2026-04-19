@@ -1,0 +1,28 @@
+# robots.txt для motoevakuator.shop
+# Останнє оновлення: 2026-04-19
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /backups/
+Disallow: /archive/
+Disallow: /*.backup*
+Disallow: /*backup*
+Disallow: /*-backup*
+
+# Додаткові налаштування
+Crawl-delay: 2
+Sitemap: https://motoevakuator.shop/sitemap.xml
+
+# Платформи пошукових систем
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Applebot
+Allow: /

@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти для замовлення перевезення мотоцикла — MotoEvakuator</title>
+    <meta name="description" content="Контакти для швидкого замовлення перевезення мотоциклів по Україні. Телефон +380 97 100 88 10, Telegram, WhatsApp, електронна пошта. Евакуація 24/7.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Контакти для замовлення перевезення мотоцикла — MotoEvakuator" />
+    <meta property="og:description" content="Швидкий зв'язок для замовлення перевезення мотоциклів по Україні. Телефон, Telegram, WhatsApp, контактна форма. 24/7." />
+    <meta property="og:image" content="https://motoevakuator.shop/images/hero-main.jpg" />
+    <meta property="og:url" content="https://motoevakuator.shop/contacts.html" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Контакти MotoEvakuator",
+        "description": "Контактна інформація для замовлення перевезення мотоциклів по Україні",
+        "url": "https://motoevakuator.shop/contacts.html",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+380971008810",
+            "contactType": "customer service",
+            "email": "info@motoevakuator.shop",
+            "availableLanguage": ["Ukrainian", "Russian"],
+            "contactOption": "TollFree"
+        }
+    }
+    </script>
+    
+    <!-- Design System & Components -->
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    
+    <!-- Inline styles for page-specific adjustments -->
+    <style>
+        /* Additional styles for contact page */
+        .contact-method {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 24px;
+            height: 100%;
+        }
+        
+        .contact-method-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--accent);
+        }
+        
+        .contact-method h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+        
+        .contact-method p {
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+        
+        .contact-method a {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        
+        .contact-method a:hover {
+            color: var(--accent);
+        }
+        
+        .contact-qr {
+            width: 120px;
+            height: 120px;
+            margin: 16px auto;
+            object-fit: contain;
+        }
+        
+        .contact-form-container {
+            background-color: var(--card);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            border: 1px solid var(--border);
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text);
+        }
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color var(--transition);
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+        
+        .checkbox-label input[type="checkbox"] {
+            margin-top: 3px;
+        }
+        
+        .checkbox-label a {
+            color: var(--accent);
+        }
+        
+        .form-note {
+            font-size: 0.875rem;
+            color: var(--text-dim);
+            margin-top: 16px;
+        }
+        
+        .map-container {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            margin-top: 32px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+            display: block;
+        }
+        
+        .faq-item {
+            margin-bottom: 16px;
+        }
+        
+        .faq-question {
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all var(--transition);
+        }
+        
+        .faq-question:hover {
+            border-color: var(--accent);
+        }
+        
+        .faq-question.active {
+            border-color: var(--accent);
+            background-color: rgba(255, 69, 0, 0.05);
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--accent);
+            transition: transform var(--transition);
+        }
+        
+        .faq-question.active::after {
+            content: '−';
+        }
+        
+        .faq-answer {
+            padding: 16px;
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 var(--radius) var(--radius);
+            color: var(--text-muted);
+            display: none;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        /* Click-to-navigate map styles */
+        .clickable-map {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            transition: all var(--transition);
+        }
+        
+        .clickable-map:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.2);
+        }
+        
+        .map-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.8) brightness(0.6);
+            transition: filter var(--transition);
+        }
+        
+        .clickable-map:hover .map-image {
+            filter: grayscale(0.5) brightness(0.7);
+        }
+        
+        .map-marker {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+        
+        .marker-dot {
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.8);
+            position: relative;
+            z-index: 3;
+            animation: markerPulse 2s infinite;
+        }
+        
+        .marker-pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 69, 0, 0.3);
+            border-radius: 50%;
+            z-index: 2;
+            animation: markerPulseOuter 2s infinite;
+        }
+        
+        .map-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(10, 10, 10, 0.9));
+            padding: 32px;
+            z-index: 4;
+        }
+        
+        .map-overlay-content {
+            color: white;
+            text-align: center;
+        }
+        
+        .map-overlay-content h4 {
+            color: white;
+            margin-bottom: 8px;
+            font-size: 1.25rem;
+        }
+        
+        .map-overlay-content p {
+            margin-bottom: 4px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .map-note {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 8px;
+        }
+        
+        @keyframes markerPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(255, 69, 0, 0.8);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 30px rgba(255, 69, 0, 1);
+            }
+        }
+        
+        @keyframes markerPulseOuter {
+            0% {
+                width: 60px;
+                height: 60px;
+                opacity: 0.7;
+            }
+            100% {
+                width: 120px;
+                height: 120px;
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-form-container {
+                padding: 24px;
+            }
+            
+            .clickable-map {
+                height: 300px;
+            }
+            
+            .map-overlay {
+                padding: 20px;
+            }
+            
+            .map-overlay-content h4 {
+                font-size: 1.125rem;
+            }
+            
+            .map-note {
+                font-size: 0.8125rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header mount point -->
+    <div id="header-mount"></div>
+    
+    <main>
+        <!-- ===== PAGE HERO ===== -->
+        <section class="section hero-section section-dark" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-main.jpg') center/cover; min-height: 70vh; display: flex; align-items: center;">
+            <div class="container">
+                <div class="text-center">
+                    <span class="tag">ЗВ'ЯЗОК 24/7</span>
+                    <h1 class="reveal">ЗВ'ЯЖІТЬСЯ З НАМИ</h1>
+                    <p class="reveal" style="max-width: 800px; margin: 0 auto 2rem;">
+                        Швидкий зв'язок для професійного перевезення вашого мотоцикла по всій Україні. 
+                        Консультації, замовлення, термінова допомога – ми завжди на зв'язку.
+                    </p>
+                    <div class="reveal" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="tel:+380971008810" class="btn btn-primary btn-lg">📞 +380 97 100 88 10</a>
+                        <a href="#contact-form" class="btn btn-ghost btn-lg">Написати повідомлення</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT METHODS ===== -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2>ОБЕРІТЬ ЗРУЧНИЙ СПОСІБ ЗВ'ЯЗКУ</h2>
+                    <p class="text-center" style="max-width: 600px; margin: 0 auto;">
+                        Ми завжди на зв'язку для консультації та замовлення послуг
+                    </p>
+                </div>
+
+                <div class="grid-3">
+                    <!-- Phone -->
+                    <div class="card reveal">
+                        <div class="contact-method">
+                            <div class="contact-method-icon">📞</div>
+                            <h3>ТЕЛЕФОН</h3>
+                            <a href="tel:+380971008810">+380 97 100 88 10</a>
+                            <p>Найшвидший спосіб отримати відповідь. Екстрені виклики обслуговуються 24/7.</p>
+                        </div>
+                    </div>
+
+                    <!-- Telegram -->
+                    <div class="card reveal">
+                        <div class="contact-method">
+                            <div class="contact-method-icon">✈️</div>
+                            <h3>TELEGRAM</h3>
+                            <a href="https://t.me/motoyevakuator" target="_blank">@motoyevakuator</a>
+                            <p>Напишіть нам у месенджер для консультації. Відповідаємо протягом 15 хвилин.</p>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div class="card reveal">
+                        <div class="contact-method">
+                            <div class="contact-method-icon">💬</div>
+                            <h3>WHATSAPP</h3>
+                            <a href="https://wa.me/380971008810" target="_blank">+380 97 100 88 10</a>
+                            <p>Зручний зв'язок через WhatsApp. Можемо надіслати фото та відео.</p>
+                        </div>
+                    </div>
+
+                    <!-- QR Code -->
+                    <div class="card reveal">
+                        <div class="contact-method">
+                            <div class="contact-method-icon">📱</div>
+                            <h3>QR-КОД</h3>
+                            <img src="images/qr-code-simple.svg" alt="QR-код для переходу на сайт" class="contact-qr">
+                            <p>Скануйте QR-код, щоб швидко перейти на наш сайт та зберегти контакти</p>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="card reveal">
+                        <div class="contact-method">
+                            <div class="contact-method-icon">📧</div>
+                            <h3>ЕЛЕКТРОННА ПОШТА</h3>
+                            <a href="mailto:info@motoevakuator.shop">info@motoevakuator.shop</a>
+                            <p>Надішліть запит на електронну пошту для детальних консультацій.</p>
+                        </div>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="card reveal">
+                        <div class="contact-method">
+                            <div class="contact-method-icon">📍</div>
+                            <h3>АДРЕСА БАЗИ</h3>
+                            <p><strong>м. Київ, вул. Азербайджанська, 3</strong></p>
+                            <p>База для перевезень розташована у центрі Києва. Працюємо по всій Україні.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT FORM & MAP ===== -->
+        <section class="section section-dark" id="contact-form">
+            <div class="container">
+                <div class="grid-2" style="gap: 48px;">
+                    <!-- Contact Form -->
+                    <div class="contact-form-container reveal">
+                        <h3 class="mb-4">НАПИШІТЬ НАМ ПОВІДОМЛЕННЯ</h3>
+                        
+                        <form id="form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Ваше ім'я</label>
+                                <input type="text" id="name" class="form-input" placeholder="Наприклад, Андрій" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Номер телефону</label>
+                                <input type="tel" id="phone" class="form-input" placeholder="+380 (XX) XXX XX XX" required>
+                                <small class="form-note">Введіть український номер (починається з +380 або 0)</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">Повідомлення</label>
+                                <textarea id="message" class="form-textarea" rows="5" placeholder="Опишіть ваш мотоцикл, маршрут перевезення та будь-які особливі побажання..." required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="agreement" required>
+                                    <span>Я погоджуюся з <a href="#">політикою конфіденційності</a> та обробкою персональних даних</span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Надіслати повідомлення</button>
+                            
+                            <p class="form-note">
+                                * Ми зв'яжемося з вами протягом 30 хвилин у робочий час.
+                            </p>
+                        </form>
+                    </div>
+
+                    <!-- Map & Info -->
+                    <div class="reveal">
+                        <h3 class="mb-4">НАША БАЗА ТА КОНТАКТНА ІНФОРМАЦІЯ</h3>
+                        <p class="mb-4">Після евакуації доставляємо мотоцикли у сервіс Fibis – де байки отримують професійний догляд та обслуговування.</p>
+                        
+                        <ul style="list-style: none; padding-left: 0; margin-bottom: 32px;">
+                            <li style="margin-bottom: 12px; padding-left: 24px; position: relative; color: var(--text-muted);">
+                                <span style="position: absolute; left: 0; color: var(--accent);">✓</span>
+                                База розташована у центрі Києва
+                            </li>
+                            <li style="margin-bottom: 12px; padding-left: 24px; position: relative; color: var(--text-muted);">
+                                <span style="position: absolute; left: 0; color: var(--accent);">✓</span>
+                                Можливість переглянути фургон та обладнання
+                            </li>
+                            <li style="margin-bottom: 12px; padding-left: 24px; position: relative; color: var(--text-muted);">
+                                <span style="position: absolute; left: 0; color: var(--accent);">✓</span>
+                                Консультації щодо кріплення та транспортування
+                            </li>
+                            <li style="margin-bottom: 12px; padding-left: 24px; position: relative; color: var(--text-muted);">
+                                <span style="position: absolute; left: 0; color: var(--accent);">✓</span>
+                                Огляд мотоцикла перед перевезенням
+                            </li>
+                            <li style="margin-bottom: 12px; padding-left: 24px; position: relative; color: var(--text-muted);">
+                                <span style="position: absolute; left: 0; color: var(--accent);">✓</span>
+                                Страхування вантажу включено в послугу
+                            </li>
+                        </ul>
+
+                        <div class="map-container">
+                            <a href="https://maps.google.com/?q=50.441072,30.639776" target="_blank" rel="noopener noreferrer" class="clickable-map">
+                                <img src="images/ukraine-contour.svg" alt="Карта локації MotoEvakuator" class="map-image">
+                                <div class="map-marker">
+                                    <div class="marker-dot"></div>
+                                    <div class="marker-pulse"></div>
+                                </div>
+                                <div class="map-overlay">
+                                    <div class="map-overlay-content">
+                                        <h4>Наша локація</h4>
+                                        <p><strong>м. Київ, вул. Азербайджанська, 3</strong></p>
+                                        <p class="map-note">Натисніть на карту для відкриття в Google Maps</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FAQ SECTION ===== -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2>ПОПУЛЯРНІ ПИТАННЯ ПРО КОМУНІКАЦІЮ</h2>
+                    <p class="text-center" style="max-width: 600px; margin: 0 auto;">
+                        Відповіді на найпоширеніші запитання щодо зв'язку та замовлення
+                    </p>
+                </div>
+
+                <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item reveal">
+                        <div class="faq-question">Який найшвидший спосіб замовити перевезення?</div>
+                        <div class="faq-answer">Найшвидший спосіб — зателефонувати на номер +380 97 100 88 10. У робочий час ми відповідаємо протягом 3-х дзвінків. Для екстрених випадків працюємо 24/7.</div>
+                    </div>
+
+                    <div class="faq-item reveal">
+                        <div class="faq-question">Через який час ви відповідаєте в месенджерах?</div>
+                        <div class="faq-answer">У Telegram та WhatsApp відповідаємо протягом 15-30 хвилин у робочий час (08:00-20:00). Після 20:00 відповіді можуть займати до 1 години.</div>
+                    </div>
+
+                    <div class="faq-item reveal">
+                        <div class="faq-question">Чи можна отримати консультацію перед замовленням?</div>
+                        <div class="faq-answer">Так, ми надаємо безкоштовні консультації щодо перевезення, кріплення та вартості. Можемо провести відеодзвінок для огляду мотоцикла.</div>
+                    </div>
+
+                    <div class="faq-item reveal">
+                        <div class="faq-question">Як довго чекати на виїзд фургона після замовлення?</div>
+                        <div class="faq-answer">У стандартному режимі — 1-3 дні. Для термінових замовлень можливий виїзд протягом 24 годин (додаткова плата +50%).</div>
+                    </div>
+
+                    <div class="faq-item reveal">
+                        <div class="faq-question">Чи працюєте ви у вихідні та свята?</div>
+                        <div class="faq-answer">Так, ми працюємо 7 днів на тиждень. У вихідні графік скорочений (09:00-18:00), але екстрені виклики обслуговуються 24/7.</div>
+                    </div>
+
+                    <div class="faq-item reveal">
+                        <div class="faq-question">Чи можна особисто приїхати на базу?</div>
+                        <div class="faq-answer">Так, за попереднім узгодженням можна приїхати за адресою: м. Київ, вул. Азербайджанська, 3. Покажемо фургон та обладнання.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== STATISTICS SECTION ===== -->
+        <section class="section section-dark">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2>НАША НАДІЙНІСТЬ У ЦИФРАХ</h2>
+                    <p class="text-center" style="max-width: 600px; margin: 0 auto;">
+                        Довіра клієнтів та якість комунікації
+                    </p>
+                </div>
+
+                <div class="grid-4">
+                    <div class="card text-center reveal">
+                        <div class="stat-number" data-count="15">0</div>
+                        <p class="text-muted">хвилин середній час відповіді</p>
+                    </div>
+
+                    <div class="card text-center reveal">
+                        <div class="stat-number" data-count="98.7">0</div>
+                        <p class="text-muted">позитивних відгуків про комунікацію</p>
+                    </div>
+
+                    <div class="card text-center reveal">
+                        <div class="stat-number">24/7</div>
+                        <p class="text-muted">доступність для екстрених викликів</p>
+                    </div>
+
+                    <div class="card text-center reveal">
+                        <div class="stat-number" data-count="500">500+</div>
+                        <p class="text-muted">перевезень</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FINAL CTA ===== -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="mb-4">ГОТОВІ ЗАМОВИТИ ПЕРЕВЕЗЕННЯ МОТОЦИКЛА?</h2>
+                    <p class="text-center mb-5" style="max-width: 600px; margin: 0 auto;">
+                        Зв'яжіться з нами прямо зараз для швидкої консультації та розрахунку вартості
+                    </p>
+                    
+                    <div class="flex gap-4 justify-center flex-wrap">
+                        <a href="tel:+380971008810" class="btn btn-primary btn-lg">📞 Зателефонувати</a>
+                        <a href="https://t.me/motoyevakuator" target="_blank" class="btn btn-ghost btn-lg">✈️ Написати в Telegram</a>
+                        <a href="#contact-form" class="btn btn-ghost btn-lg">📝 Заповнити форму</a>
+                    </div>
+                    
+                    <p class="mt-4 text-muted">Або скористайтесь іншими способами зв'язку: WhatsApp, електронна пошта, візит на базу.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer mount point -->
+    <div id="footer-mount"></div>
+
+    <!-- JavaScript Components -->
+    <script src="js/header.js" defer></script>
+    <script src="js/footer.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    
+    <!-- Contact Form Validation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize animations
+            if (typeof initScrollReveal === 'function') initScrollReveal();
+            if (typeof initCountUp === 'function') initCountUp();
+            if (typeof initFAQAccordion === 'function') initFAQAccordion();
+            
+            // Contact form validation
+            const contactForm = document.getElementById('form');
+            const phoneInput = document.getElementById('phone');
+            
+            function validateUkrainianPhone(phone) {
+                // Remove spaces, dashes, parentheses
+                const cleanPhone = phone.replace(/[\s\-()]/g, '');
+                // Check if starts with +380 or 0 followed by 9 digits
+                return /^(\+380|0)[0-9]{9}$/.test(cleanPhone);
+            }
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('name').value.trim();
+                    const phone = phoneInput.value.trim();
+                    const message = document.getElementById('message').value.trim();
+                    const agreement = document.getElementById('agreement').checked;
+                    
+                    // Validation
+                    if (!name || name.length < 2) {
+                        alert('Будь ласка, введіть коректне ім\'я');
+                        return;
+                    }
+                    
+                    if (!validateUkrainianPhone(phone)) {
+                        alert('Будь ласка, введіть коректний український номер телефону (формат: +380XXXXXXXXX або 0XXXXXXXXX)');
+                        phoneInput.focus();
+                        return;
+                    }
+                    
+                    if (!message || message.length < 10) {
+                        alert('Будь ласка, введіть повідомлення (мінімум 10 символів)');
+                        return;
+                    }
+                    
+                    if (!agreement) {
+                        alert('Ви повинні погодитись з політикою конфіденційності');
+                        return;
+                    }
+                    
+                    // Form submission simulation
+                    alert('Дякуємо! Ваше повідомлення відправлено. Ми зв\'яжемося з вами протягом 30 хвилин.');
+                    contactForm.reset();
+                });
+            }
+            
+            // Phone input formatting
+            if (phoneInput) {
+                phoneInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    
+                    if (value.startsWith('380')) {
+                        value = '+' + value;
+                    } else if (value.startsWith('0')) {
+                        // Keep as is
+                    } else if (value.length > 0) {
+                        value = '+380' + value;
+                    }
+                    
+                    // Format: +380 (XX) XXX XX XX
+                    if (value.length > 3) {
+                        value = value.substring(0, 4) + ' (' + value.substring(4);
+                    }
+                    if (value.length > 7) {
+                        value = value.substring(0, 8) + ') ' + value.substring(8);
+                    }
+                    if (value.length > 12) {
+                        value = value.substring(0, 13) + ' ' + value.substring(13);
+                    }
+                    if (value.length > 15) {
+                        value = value.substring(0, 16) + ' ' + value.substring(16);
+                    }
+                    
+                    e.target.value = value;
+                });
+            }
+            
+            // FAQ accordion initialization
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const isActive = this.classList.contains('active');
+                    
+                    // Close all other FAQs
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                    });
+                    document.querySelectorAll('.faq-answer').forEach(a => {
+                        a.classList.remove('active');
+                    });
+                    
+                    // Open this FAQ if it wasn't active
+                    if (!isActive) {
+                        this.classList.add('active');
+                        answer.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

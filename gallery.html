@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея | MotoEvakuator — Наші роботи з перевезення мотоциклів</title>
+    <meta name="description" content="Фотогалерея наших робіт з перевезення мотоциклів по Україні. BMW, Harley-Davidson, Triumph, Suzuki, Kawasaki, ATV. Професійне обладнання, гарантія безпеки.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Галерея | MotoEvakuator — Наші роботи з перевезення мотоциклів" />
+    <meta property="og:description" content="Фотогалерея перевезених мотоциклів: спортивні байки, круїзери, ендуро, квадроцикли. Професійне обладнання, гарантія безпеки." />
+    <meta property="og:image" content="https://motoevakuator.shop/images/hero-main.jpg" />
+    <meta property="og:url" content="https://motoevakuator.shop/gallery.html" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Фотогалерея перевезених мотоциклів",
+        "description": "Фотографії мотоциклів, які ми перевезли по всій Україні",
+        "url": "https://motoevakuator.shop/gallery.html",
+        "image": "https://motoevakuator.shop/images/hero-main.jpg",
+        "publisher": {
+            "@type": "Organization",
+            "name": "MotoEvakuator",
+            "logo": "https://motoevakuator.shop/images/logo.svg"
+        }
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Design System -->
+    <link rel="stylesheet" href="css/design-system.css">
+    
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <link rel="apple-touch-icon" href="images/logo.png">
+</head>
+<body>
+    <!-- Header mount point -->
+    <div id="header-mount"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="section hero-section section-dark" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-main.jpg') center/cover; min-height: 70vh; display: flex; align-items: center;">
+            <div class="container">
+                <div class="text-center">
+                    <span class="tag">ФОТОГАЛЕРЕЯ</span>
+                    <h1 class="reveal">НАШІ РОБОТИ</h1>
+                    <p class="reveal" style="max-width: 800px; margin: 0 auto 2rem;">Більше 500 перевезених мотоциклів. Від спортивних байків до важких круїзерів та квадроциклів.</p>
+                    <div class="reveal" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="#gallery" class="btn btn-primary btn-lg">ПЕРЕГЛЯНУТИ ГАЛЕРЕЮ</a>
+                        <a href="tel:+380971008810" class="btn btn-ghost btn-lg">ЗАМОВИТИ ПЕРЕВЕЗЕННЯ</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 4rem;">
+                    <h2 class="reveal">ГАЛЕРЕЯ ПЕРЕВЕЗЕНИХ МОТОЦИКЛІВ</h2>
+                    <p class="reveal">Подивіться, які мотоцикли ми перевозимо. Всі фотографії зроблені під час реальних перевезень нашими спеціалістами.</p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="reveal" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 4rem;">
+                    <button class="btn" data-filter="all">Всі</button>
+                    <button class="btn btn-ghost" data-filter="sports">Спортивні</button>
+                    <button class="btn btn-ghost" data-filter="cruisers">Круїзери</button>
+                    <button class="btn btn-ghost" data-filter="adv">Ендуро/ADV</button>
+                    <button class="btn btn-ghost" data-filter="atv">Квадроцикли</button>
+                    <button class="btn btn-ghost" data-filter="process">Процес перевезення</button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="grid-4 reveal" id="gallery-grid">
+                    <!-- 22 gallery items -->
+                    <!-- Спортивні -->
+                    <div class="gallery-item card" data-category="sports" data-lightbox="images/moto2_resized/bmw-m-1000-rr.png">
+                        <img src="images/moto2_resized/bmw-m-1000-rr.png" alt="BMW M 1000 RR" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">BMW M 1000 RR</h4>
+                            <span class="tag">Спортивний</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="sports" data-lightbox="images/moto2_resized/suzuki-hayabusa.png">
+                        <img src="images/moto2_resized/suzuki-hayabusa.png" alt="Suzuki Hayabusa" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Suzuki Hayabusa</h4>
+                            <span class="tag">Спортивний</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="sports" data-lightbox="images/moto2_resized/kawasaki-ninja-1000.png">
+                        <img src="images/moto2_resized/kawasaki-ninja-1000.png" alt="Kawasaki Ninja 1000" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Kawasaki Ninja 1000</h4>
+                            <span class="tag">Спортивний</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="sports" data-lightbox="images/moto2_resized/hayabusa-japanese-falcon.png">
+                        <img src="images/moto2_resized/hayabusa-japanese-falcon.png" alt="Hayabusa" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Suzuki Hayabusa</h4>
+                            <span class="tag">Спортивний</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Круїзери -->
+                    <div class="gallery-item card" data-category="cruisers" data-lightbox="images/moto2_resized/harley-davidson.png">
+                        <img src="images/moto2_resized/harley-davidson.png" alt="Harley-Davidson" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Harley-Davidson</h4>
+                            <span class="tag">Круїзер</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="cruisers" data-lightbox="images/moto2_resized/triumph-rocket-iii.png">
+                        <img src="images/moto2_resized/triumph-rocket-iii.png" alt="Triumph Rocket III" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Triumph Rocket III</h4>
+                            <span class="tag">Круїзер</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="cruisers" data-lightbox="images/moto2_resized/suzuki-boulevard-m109r.png">
+                        <img src="images/moto2_resized/suzuki-boulevard-m109r.png" alt="Suzuki Boulevard M109R" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Suzuki Boulevard M109R</h4>
+                            <span class="tag">Круїзер</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="cruisers" data-lightbox="images/moto2_resized/suzuki-intruder-m1800r.png">
+                        <img src="images/moto2_resized/suzuki-intruder-m1800r.png" alt="Suzuki Intruder M1800R" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Suzuki Intruder M1800R</h4>
+                            <span class="tag">Круїзер</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="cruisers" data-lightbox="images/moto2_resized/harley-davidson-sportster-s.png">
+                        <img src="images/moto2_resized/harley-davidson-sportster-s.png" alt="Harley-Davidson Sportster S" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Harley-Davidson Sportster S</h4>
+                            <span class="tag">Круїзер</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="cruisers" data-lightbox="images/moto2_resized/kawasaki-vulcan-2020.png">
+                        <img src="images/moto2_resized/kawasaki-vulcan-2020.png" alt="Kawasaki Vulcan 2020" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Kawasaki Vulcan 2020</h4>
+                            <span class="tag">Круїзер</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Ендуро/ADV -->
+                    <div class="gallery-item card" data-category="adv" data-lightbox="images/moto2_resized/triumph-tiger.png">
+                        <img src="images/moto2_resized/triumph-tiger.png" alt="Triumph Tiger" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Triumph Tiger</h4>
+                            <span class="tag">Ендуро/ADV</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="adv" data-lightbox="images/moto2_resized/tiger-explorer.png">
+                        <img src="images/moto2_resized/tiger-explorer.png" alt="Triumph Tiger Explorer" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Triumph Tiger Explorer</h4>
+                            <span class="tag">Ендуро/ADV</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="adv" data-lightbox="images/moto2_resized/tiger-explorer-2.png">
+                        <img src="images/moto2_resized/tiger-explorer-2.png" alt="Triumph Tiger Explorer 2" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Triumph Tiger Explorer 2</h4>
+                            <span class="tag">Ендуро/ADV</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="adv" data-lightbox="images/moto2_resized/triumph-tiger-2.png">
+                        <img src="images/moto2_resized/triumph-tiger-2.png" alt="Triumph Tiger 2" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Triumph Tiger 2</h4>
+                            <span class="tag">Ендуро/ADV</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="adv" data-lightbox="images/moto2_resized/triumph-tiger-3.png">
+                        <img src="images/moto2_resized/triumph-tiger-3.png" alt="Triumph Tiger 3" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Triumph Tiger 3</h4>
+                            <span class="tag">Ендуро/ADV</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="adv" data-lightbox="images/moto2_resized/BMW R 1250 GS.jpg">
+                        <img src="images/moto2_resized/BMW R 1250 GS.jpg" alt="BMW R 1250 GS" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">BMW R 1250 GS</h4>
+                            <span class="tag">Ендуро/ADV</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Квадроцикли -->
+                    <div class="gallery-item card" data-category="atv" data-lightbox="images/moto2_resized/atv-all-terrain-vehicle.png">
+                        <img src="images/moto2_resized/atv-all-terrain-vehicle.png" alt="ATV All-Terrain Vehicle" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">ATV All-Terrain Vehicle</h4>
+                            <span class="tag">Квадроцикл</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="atv" data-lightbox="images/moto2_resized/atv-all-terrain-vehicle-2.png">
+                        <img src="images/moto2_resized/atv-all-terrain-vehicle-2.png" alt="ATV 2" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">ATV All-Terrain Vehicle 2</h4>
+                            <span class="tag">Квадроцикл</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="atv" data-lightbox="images/moto2_resized/Квадроцикл Segway Snarler ATV.jpg">
+                        <img src="images/moto2_resized/Квадроцикл Segway Snarler ATV.jpg" alt="Segway Snarler ATV" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Segway Snarler ATV</h4>
+                            <span class="tag">Квадроцикл</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Процес перевезення -->
+                    <div class="gallery-item card" data-category="process" data-lightbox="images/moto2_resized/transport-process.png">
+                        <img src="images/moto2_resized/transport-process.png" alt="Процес перевезення" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Процес перевезення</h4>
+                            <span class="tag">Процес</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="process" data-lightbox="images/moto2_resized/photo_2025-10-17_12-08-56.jpg">
+                        <img src="images/moto2_resized/photo_2025-10-17_12-08-56.jpg" alt="Процес завантаження" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Процес завантаження</h4>
+                            <span class="tag">Процес</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="process" data-lightbox="images/moto2_resized/photo_2025-10-17_12-08-57.jpg">
+                        <img src="images/moto2_resized/photo_2025-10-17_12-08-57.jpg" alt="Фіксація мотоцикла" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Фіксація мотоцикла</h4>
+                            <span class="tag">Процес</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="process" data-lightbox="images/moto2_resized/photo_2025-10-17_12-08-59.jpg">
+                        <img src="images/moto2_resized/photo_2025-10-17_12-08-59.jpg" alt="Транспортування" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Транспортування</h4>
+                            <span class="tag">Процес</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item card" data-category="process" data-lightbox="images/moto2_resized/photo_2025-10-17_12-09-29.jpg">
+                        <img src="images/moto2_resized/photo_2025-10-17_12-09-29.jpg" alt="Процес доставки" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+                        <div style="padding: 1rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Процес доставки</h4>
+                            <span class="tag">Процес</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Section -->
+                <div class="reveal" style="margin: 6rem 0;">
+                    <div class="grid-4">
+                    <div class="card text-center">
+                        <div class="text-accent" style="font-size: 3rem; font-weight: 700; line-height: 1;">500+</div>
+                        <p style="margin: 0; color: var(--text-muted);">перевезень</p>
+                    </div>
+                    
+                    <div class="card text-center">
+                        <div class="text-accent" style="font-size: 3rem; font-weight: 700; line-height: 1;">4</div>
+                        <p style="margin: 0; color: var(--text-muted);">роки досвіду</p>
+                    </div>
+                    
+                    <div class="card text-center">
+                        <div class="text-accent" style="font-size: 3rem; font-weight: 700; line-height: 1;">15+</div>
+                        <p style="margin: 0; color: var(--text-muted);">міст</p>
+                    </div>
+                    
+                    <div class="card text-center">
+                        <div class="text-accent" style="font-size: 3rem; font-weight: 700; line-height: 1;">100%</div>
+                        <p style="margin: 0; color: var(--text-muted);">збереження</p>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="text-center reveal">
+                    <h2 style="margin-bottom: 1rem;">ГОТОВІ ДОВІРИТИ НАМ СВІЙ МОТОЦИКЛ?</h2>
+                    <p style="max-width: 800px; margin: 0 auto 2rem; color: var(--text-muted);">Зв'яжіться з нами для безкоштовної консультації та розрахунку вартості перевезення.</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="tel:+380971008810" class="btn btn-primary btn-lg">📞 +380 97 100 88 10</a>
+                        <a href="contacts.html" class="btn btn-ghost btn-lg">ВСІ КОНТАКТИ</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer mount point -->
+    <div id="footer-mount"></div>
+
+    <!-- JavaScript -->
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/animations.js"></script>
+    
+    <!-- Additional gallery functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('[data-filter]');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('btn-primary');
+                        btn.classList.add('btn-ghost');
+                    });
+                    this.classList.remove('btn-ghost');
+                    this.classList.add('btn-primary');
+                    
+                    const filterValue = this.dataset.filter;
+                    
+                    // Filter items
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.dataset.category === filterValue) {
+                            item.classList.remove('hidden');
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+            
+            // Set initial active button
+            document.querySelector('[data-filter="all"]').classList.remove('btn-ghost');
+            document.querySelector('[data-filter="all"]').classList.add('btn-primary');
+            
+            // Ensure lightbox works
+            const lightbox = document.getElementById('lightbox');
+            if (!lightbox) {
+                // Lightbox will be created by animations.js
+                console.log('Lightbox will be initialized by animations.js');
+            }
+        });
+    </script>
+</body>
+</html>
