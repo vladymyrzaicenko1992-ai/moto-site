@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </a>
                         <p class="footer-tagline">Ваш мотоцикл у надійних руках</p>
                         <div class="footer-stats">
-                            <p><span class="stat-number">500+</span> перевезень</p>
+                            <p><span class="stat-number">5000</span> перевезень</p>
                             <p><span class="stat-number">24/7</span> роботи</p>
                             <p>Партнер <strong>Motoservice Fibis</strong></p>
                         </div>
