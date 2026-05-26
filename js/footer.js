@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const footerHTML = `
         <footer class="footer">
             <div class="container">
-                <div class="footer-grid grid-3">
+                <div class="footer-grid">
                     <!-- Column 1: Brand -->
                     <div class="footer-column">
                         <a href="index.html" class="footer-logo">
@@ -38,6 +38,18 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <li><a href="index.html#contacts">Контакти</a></li>
                                 <li><a href="gallery.html">Галерея</a></li>
                                 <li><a href="fibis.html">Fibis</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Послуги</h3>
+                        <nav class="footer-nav">
+                            <ul>
+                                <li><a href="motoevakuator-kiev.html">Мотоэвакуатор Київ</a></li>
+                                <li><a href="evakuaciya-moto-kiev.html">Евакуація мото</a></li>
+                                <li><a href="perevezennya-moto-ukraina.html">Перевезення по Україні</a></li>
+                                <li><a href="perevezennya-kvadrocikla.html">Квадроцикли та ATV</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -80,7 +92,19 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add footer styles if not already present
     addFooterStyles();
+    initStickyCall();
 });
+
+function initStickyCall() {
+    if (document.querySelector('.sticky-call')) return;
+
+    const link = document.createElement('a');
+    link.href = 'tel:+380971008810';
+    link.className = 'sticky-call';
+    link.setAttribute('aria-label', 'Зателефонувати +380 97 100 88 10');
+    link.innerHTML = '<span class="sticky-call-icon" aria-hidden="true">📞</span><span class="sticky-call-text">+380 97 100 88 10</span>';
+    document.body.appendChild(link);
+}
 
 /**
  * Add footer-specific CSS styles
@@ -107,7 +131,13 @@ function addFooterStyles() {
             
             @media (min-width: 768px) {
                 .footer-grid {
-                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (min-width: 1024px) {
+                .footer-grid {
+                    grid-template-columns: repeat(4, 1fr);
                 }
             }
             

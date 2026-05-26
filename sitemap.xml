@@ -2,19 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://motoevakuator.shop/</loc>
-        <lastmod>2026-05-26</lastmod>
+        <lastmod>2026-05-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>https://motoevakuator.shop/motoevakuator-kiev.html</loc>
+        <lastmod>2026-05-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://motoevakuator.shop/evakuaciya-moto-kiev.html</loc>
+        <lastmod>2026-05-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://motoevakuator.shop/perevezennya-moto-ukraina.html</loc>
+        <lastmod>2026-05-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://motoevakuator.shop/perevezennya-kvadrocikla.html</loc>
+        <lastmod>2026-05-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://motoevakuator.shop/gallery.html</loc>
-        <lastmod>2026-05-26</lastmod>
+        <lastmod>2026-05-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://motoevakuator.shop/fibis.html</loc>
-        <lastmod>2026-05-26</lastmod>
+        <lastmod>2026-05-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

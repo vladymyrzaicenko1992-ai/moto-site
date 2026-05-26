@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <nav class="header-nav desktop-nav header-subnav" aria-label="Розділи головної">
                     <ul>
                         <li><a href="#services" class="nav-link nav-link-sub">Послуги</a></li>
+                        <li><a href="#prices" class="nav-link nav-link-sub">Ціни</a></li>
                         <li><a href="#about" class="nav-link nav-link-sub">Про нас</a></li>
                         <li><a href="#contacts" class="nav-link nav-link-sub">Контакти</a></li>
                     </ul>
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <li><a href="index.html" class="mobile-nav-link ${currentPage === 'index' ? 'active' : ''}">Головна</a></li>
                             ${isHome ? `
                             <li><a href="#services" class="mobile-nav-link mobile-nav-anchor">Послуги</a></li>
+                            <li><a href="#prices" class="mobile-nav-link mobile-nav-anchor">Ціни</a></li>
                             <li><a href="#about" class="mobile-nav-link mobile-nav-anchor">Про нас</a></li>
                             <li><a href="#contacts" class="mobile-nav-link mobile-nav-anchor">Контакти</a></li>
                             ` : ''}
@@ -88,7 +90,7 @@ function getCurrentPage() {
         contacts: 'index'
     };
 
-    return pageMap[page] || 'index';
+    return pageMap[page] || page;
 }
 
 function initHeader() {
