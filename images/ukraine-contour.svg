@@ -1,3 +1,110 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a9d9d29fbd1097414305729988f7dd642ecbc3d3c444c39ca31fe6834a4ee543
-size 4705
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <style>
+      .contour {
+        fill: none;
+        stroke: white;
+        stroke-width: 1;
+        opacity: 0.2;
+      }
+      
+      .city-dot {
+        fill: #ffd700;
+        opacity: 0.7;
+        r: 3;
+      }
+      
+      .city-dot.highlight {
+        fill: #ffffff;
+        opacity: 1;
+        r: 5;
+        filter: url(#glow);
+      }
+      
+      .city-label {
+        fill: #ffffff;
+        font-size: 12px;
+        font-family: Arial, sans-serif;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      
+      .city-label.visible {
+        opacity: 1;
+      }
+      
+      @keyframes pulse {
+        0% { r: 3; opacity: 0.7; }
+        50% { r: 6; opacity: 1; }
+        100% { r: 3; opacity: 0.7; }
+      }
+      
+      @keyframes glow {
+        0% { r: 5; opacity: 1; }
+        50% { r: 8; opacity: 0.8; }
+        100% { r: 5; opacity: 1; }
+      }
+      
+      .highlight {
+        animation: glow 2s infinite;
+      }
+      
+      #glow {
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+          <feMerge> 
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      }
+    </style>
+  </defs>
+  
+  <!-- Contour paths -->
+  <path class="contour" d="M100,150 L150,140 L200,145 L250,135 L300,140 L350,130 L400,135 L450,125 L500,130 L550,140 L600,150 L650,160 L680,200 L700,250 L690,300 L680,350 L650,400 L600,420 L550,430 L500,440 L450,450 L400,460 L350,470 L300,460 L250,470 L200,460 L150,450 L120,400 L100,350 L90,300 L100,250 L90,200 L100,150 Z"/>
+  <path class="contour" d="M150,200 L200,190 L250,195 L300,185 L350,190 L400,180 L450,185 L500,190 L550,200 L580,250 L570,300 L550,350 L500,360 L450,370 L400,380 L350,390 L300,380 L250,390 L200,380 L150,370 L120,320 L130,270 L120,220 L150,200 Z"/>
+  <path class="contour" d="M200,250 L250,240 L300,245 L350,235 L400,240 L450,230 L500,240 L520,280 L510,320 L480,350 L430,360 L380,370 L330,360 L280,370 L230,360 L200,320 L190,280 L200,250 Z"/>
+  
+  <!-- City dots with animation -->
+  <circle class="city-dot" cx="200" cy="200" data-city="Kyiv">
+    <animate attributeName="r" values="3;6;3" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="city-dot" cx="250" cy="180" data-city="Kharkiv">
+    <animate attributeName="r" values="3;6;3" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="city-dot" cx="300" cy="220" data-city="Dnipro">
+    <animate attributeName="r" values="3;6;3" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="city-dot" cx="220" cy="280" data-city="Odesa">
+    <animate attributeName="r" values="3;6;3" dur="4.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="4.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="city-dot" cx="400" cy="200" data-city="Lviv">
+    <animate attributeName="r" values="3;6;3" dur="3.2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="city-dot" cx="350" cy="250" data-city="Zaporizhzhia">
+    <animate attributeName="r" values="3;6;3" dur="3.8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="city-dot" cx="280" cy="300" data-city="Mykolaiv">
+    <animate attributeName="r" values="3;6;3" dur="4.2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="4.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="city-dot" cx="180" cy="320" data-city="Vinnytsia">
+    <animate attributeName="r" values="3;6;3" dur="3.7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3.7s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="city-dot" cx="320" cy="180" data-city="Sumy">
+    <animate attributeName="r" values="3;6;3" dur="3.3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3.3s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="city-dot" cx="270" cy="240" data-city="Cherkasy">
+    <animate attributeName="r" values="3;6;3" dur="3.9s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3.9s" repeatCount="indefinite"/>
+  </circle>
+</svg>

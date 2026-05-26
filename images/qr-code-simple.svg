@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e72092b824c1831a06a6221b2260e8b2c4c299b1e1965a86b579597dcd800274
-size 754
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Фон -->
+  <rect width="500" height="500" fill="#ffffff" rx="30"/>
+  
+  <!-- QR-код -->
+  <image href="https://api.qrserver.com/v1/create-qr-code/?data=https://motoevakuator.shop&amp;size=420x420&amp;color=1a3a6e&amp;bgcolor=ffffff&amp;qzone=0" 
+         x="40" y="40" width="420" height="420"/>
+  
+  <!-- Рамка -->
+  <rect x="15" y="15" width="470" height="470" rx="35" fill="none" stroke="#1a3a6e" stroke-width="8"/>
+  
+  <!-- Текст -->
+  <text x="250" y="470" font-family="Arial, sans-serif" font-size="28" fill="#1a3a6e" text-anchor="middle" font-weight="bold">
+    motoevakuator.shop
+  </text>
+</svg>

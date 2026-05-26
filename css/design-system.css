@@ -140,6 +140,20 @@ small {
   background-color: var(--surface);
 }
 
+/* Hero blocks: keep photo visible; don't paint solid surface over background-image */
+.hero-section.section-dark {
+  background-color: transparent;
+}
+
+.hero-section {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
 /* ===== BUTTON COMPONENTS ===== */
 .btn {
   display: inline-flex;
