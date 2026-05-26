@@ -410,7 +410,7 @@
 
     <main>
         <!-- ===== HERO SECTION ===== -->
-        <section class="section hero-section section-dark" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-main.jpg') center/cover; min-height: 70vh; display: flex; align-items: center;">
+        <section class="section hero-section">
             <div class="container">
                 <div class="text-center">
                     <span class="tag">ПРОФЕСІЙНЕ ПЕРЕВЕЗЕННЯ</span>
@@ -418,7 +418,7 @@
                     <p class="reveal" style="max-width: 800px; margin: 0 auto 2rem;">Спеціалізований закритий фургон Ford Transit. Надійно. Швидко. Цілодобово. Досвідчена команда.</p>
                     <div class="reveal" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                         <a href="tel:+380971008810" class="btn btn-primary btn-lg">Замовити зараз</a>
-                        <a href="services.html" class="btn btn-ghost btn-lg">Переглянути послуги</a>
+                        <a href="#services" class="btn btn-ghost btn-lg">Наші послуги</a>
                     </div>
                     
                     <!-- Статистика в ряд -->
@@ -513,36 +513,74 @@
             </div>
         </section>
 
-        <!-- ===== SERVICES PREVIEW ===== -->
-        <section class="section section-dark">
+        <!-- ===== SERVICES ===== -->
+        <section id="services" class="section section-dark">
             <div class="container">
                 <div class="text-center mb-5">
-                    <h2>Наші послуги</h2>
-                    <p>Комплексне рішення для будь-якого типу перевезень</p>
+                    <span class="tag">НАШІ ПОСЛУГИ</span>
+                    <h2>Комплексне перевезення мотоциклів</h2>
+                    <p style="max-width: 720px; margin: 0 auto;">Евакуація, міжміські маршрути, спортбайки та ATV — у закритому фургоні Ford Transit</p>
                 </div>
-                
-                <div class="grid-3">
-                    <!-- Service 1 -->
-                    <div class="card reveal">
-                        <h3>Евакуація мотоцикла</h3>
-                        <p>Термінова евакуація після ДТП, поломки або з інших причин</p>
-                        <a href="services.html" class="btn btn-ghost">Детальніше</a>
+
+                <div class="grid-2">
+                    <div class="card service-detail-card reveal">
+                        <div class="service-detail-image" style="background-image: url('images/moto2_resized/transport-process.png');"></div>
+                        <div class="card-body">
+                            <h3>Евакуація мотоцикла</h3>
+                            <p>Термінова допомога при ДТП, поломці або перевезенні в сервіс.</p>
+                            <ul class="service-features">
+                                <li>Виїзд за 60–90 хвилин у Києві</li>
+                                <li>Професійне кріплення без пошкоджень</li>
+                                <li>Цілодобовий виклик</li>
+                            </ul>
+                            <a href="tel:+380971008810" class="btn btn-primary">Замовити</a>
+                        </div>
                     </div>
-                    
-                    <!-- Service 2 -->
-                    <div class="card reveal">
-                        <h3>Міжміське перевезення</h3>
-                        <p>Безпечна доставка мотоцикла між містами по всій Україні</p>
-                        <a href="services.html" class="btn btn-ghost">Детальніше</a>
+
+                    <div class="card service-detail-card reveal">
+                        <div class="service-detail-image" style="background-image: url('images/moto2_resized/photo_2025-10-17_12-08-56.jpg');"></div>
+                        <div class="card-body">
+                            <h3>Міжміське перевезення</h3>
+                            <p>Доставка між містами України: Київ, Львів, Одеса, Харків та інші.</p>
+                            <ul class="service-features">
+                                <li>Страхування вантажу</li>
+                                <li>Закритий фургон Ford Transit</li>
+                                <li>Фото-звіт про стан</li>
+                            </ul>
+                            <a href="tel:+380971008810" class="btn btn-primary">Замовити</a>
+                        </div>
                     </div>
-                    
-                    <!-- Service 3 -->
-                    <div class="card reveal">
-                        <h3>Перевезення ATV/квадроциклів</h3>
-                        <p>Спеціальне кріплення для ATV, багі та іншої позашляховики</p>
-                        <a href="services.html" class="btn btn-ghost">Детальніше</a>
+
+                    <div class="card service-detail-card reveal">
+                        <div class="service-detail-image" style="background-image: url('images/moto2_resized/bmw-m-1000-rr.png');"></div>
+                        <div class="card-body">
+                            <h3>Перевезення спортбайків</h3>
+                            <p>Спеціалізоване кріплення для спортивних мотоциклів та преміум-байків.</p>
+                            <ul class="service-features">
+                                <li>Захист пластику та фар</li>
+                                <li>Досвід з M1000RR, Panigale, R1</li>
+                                <li>М'які ремені та прокладки</li>
+                            </ul>
+                            <a href="tel:+380971008810" class="btn btn-primary">Замовити</a>
+                        </div>
+                    </div>
+
+                    <div class="card service-detail-card reveal">
+                        <div class="service-detail-image" style="background-image: url('images/moto2_resized/atv-all-terrain-vehicle.png');"></div>
+                        <div class="card-body">
+                            <h3>ATV та квадроцикли</h3>
+                            <p>Транспортування позашляховиків, багі та спецтехніки.</p>
+                            <ul class="service-features">
+                                <li>Спеціальні рампи для завантаження</li>
+                                <li>Потужні кріплення</li>
+                                <li>Segway, Can-Am, Polaris</li>
+                            </ul>
+                            <a href="tel:+380971008810" class="btn btn-primary">Замовити</a>
+                        </div>
                     </div>
                 </div>
+
+                <p class="price-note reveal">Точну ціну розрахує менеджер після короткої консультації.</p>
             </div>
         </section>
 
@@ -581,6 +619,51 @@
                         <div class="step-number">4</div>
                         <h3>Доставка</h3>
                         <p>Доставка та повідомлення про прибуття</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT ===== -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="tag">ПРО НАС</span>
+                    <h2>Ваша гарантія безпеки на дорозі</h2>
+                    <p style="max-width: 720px; margin: 0 auto;">З 2020 року — перший у Києві спеціалізований евакуатор для мотоциклів</p>
+                </div>
+
+                <div class="about-story reveal">
+                    <div>
+                        <p>Коли мотоцикл зупиняється — ми починаємо рух. Наш Ford Transit обладнаний м'якою обшивкою, ременями-фіксаторами та направляючими рейками — не перероблений легковик, а професійний транспорт для байків.</p>
+                        <p style="margin-top: 1rem;">У фургоні можна безпечно перевезти до п'яти мотоциклів одночасно. Кожен прибуває без подряпин — ми працюємо за відточеними стандартами, а не наосліп.</p>
+                    </div>
+                    <div>
+                        <img src="images/hero-main.jpg" alt="Спеціалізований фургон MotoEvakuator" loading="lazy">
+                        <p style="text-align: center; margin-top: 0.75rem; color: var(--text-muted); font-size: 0.9rem;">Ford Transit для перевезення мотоциклів</p>
+                    </div>
+                </div>
+
+                <div class="grid-4 reveal" style="margin-top: 3rem;">
+                    <div class="card text-center">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🛡️</div>
+                        <h4>Надійність</h4>
+                        <p style="margin: 0; font-size: 0.9rem;">100% безпека та страхування вантажу</p>
+                    </div>
+                    <div class="card text-center">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎯</div>
+                        <h4>Професіоналізм</h4>
+                        <p style="margin: 0; font-size: 0.9rem;">Досвід з усіма типами та марками байків</p>
+                    </div>
+                    <div class="card text-center">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤲</div>
+                        <h4>Дбайливість</h4>
+                        <p style="margin: 0; font-size: 0.9rem;">М'яке кріплення та контроль у дорозі</p>
+                    </div>
+                    <div class="card text-center">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">⏱️</div>
+                        <h4>Точність</h4>
+                        <p style="margin: 0; font-size: 0.9rem;">Дотримуємося узгоджених термінів</p>
                     </div>
                 </div>
             </div>
@@ -673,6 +756,34 @@
             </div>
         </section>
 
+        <!-- ===== FAQ ===== -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2>Поширені запитання</h2>
+                    <p>Відповіді перед замовленням перевезення</p>
+                </div>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item reveal">
+                        <div class="faq-question"><span>Скільки часу займає перевезення?</span><span class="faq-toggle">+</span></div>
+                        <div class="faq-answer"><p>Між містами — 3–7 днів (стандарт) або 24–48 год (терміново). У межах міста — 2–4 години.</p></div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <div class="faq-question"><span>Як закріплюється мотоцикл?</span><span class="faq-toggle">+</span></div>
+                        <div class="faq-answer"><p>Професійні ремені в 4 точках: колеса та рама. Для спортбайків — додатковий захист пластику та фар.</p></div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <div class="faq-question"><span>Чи є страхування?</span><span class="faq-toggle">+</span></div>
+                        <div class="faq-answer"><p>Так, кожне перевезення страхується на повну вартість мотоцикла.</p></div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <div class="faq-question"><span>Як швидко виїжджаєте на евакуацію?</span><span class="faq-toggle">+</span></div>
+                        <div class="faq-answer"><p>У Києві — 60–90 хвилин. Екстрені виклики — 24/7.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ===== GALLERY PREVIEW ===== -->
         <section class="section section-dark">
             <div class="container">
@@ -708,18 +819,82 @@
             </div>
         </section>
 
+        <!-- ===== CONTACTS ===== -->
+        <section id="contacts" class="section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="tag">КОНТАКТИ</span>
+                    <h2>Зв'яжіться з нами</h2>
+                    <p style="max-width: 600px; margin: 0 auto;">Консультація та замовлення — 24/7 для екстрених випадків</p>
+                </div>
+
+                <div class="contact-methods reveal" style="margin-bottom: 3rem;">
+                    <div class="card contact-chip">
+                        <div class="contact-chip-icon">📞</div>
+                        <h3>Телефон</h3>
+                        <a href="tel:+380971008810">+380 97 100 88 10</a>
+                        <p style="margin: 0; font-size: 0.875rem;">Найшвидший спосіб замовити</p>
+                    </div>
+                    <div class="card contact-chip">
+                        <div class="contact-chip-icon">✈️</div>
+                        <h3>Telegram</h3>
+                        <a href="https://t.me/motoyevakuator" target="_blank" rel="noopener">@motoyevakuator</a>
+                        <p style="margin: 0; font-size: 0.875rem;">Відповідь за 15–30 хв</p>
+                    </div>
+                    <div class="card contact-chip">
+                        <div class="contact-chip-icon">💬</div>
+                        <h3>WhatsApp</h3>
+                        <a href="https://wa.me/380971008810" target="_blank" rel="noopener">Написати</a>
+                        <p style="margin: 0; font-size: 0.875rem;">Фото та відео мотоцикла</p>
+                    </div>
+                </div>
+
+                <div class="grid-2 reveal" style="gap: 2rem; align-items: start;">
+                    <div class="contact-form-box">
+                        <h3 style="margin-bottom: 1.25rem;">Написати нам</h3>
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Ім'я</label>
+                                <input type="text" id="name" class="form-input" required placeholder="Ваше ім'я">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Телефон</label>
+                                <input type="tel" id="phone" class="form-input" required placeholder="+380 97 100 88 10">
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">Повідомлення</label>
+                                <textarea id="message" class="form-textarea" required placeholder="Маршрут, марка мотоцикла, терміновість…"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Надіслати</button>
+                            <p style="margin-top: 1rem; font-size: 0.8125rem; color: var(--text-dim);">Або email: <a href="mailto:info@motoevakuator.shop">info@motoevakuator.shop</a></p>
+                        </form>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 1rem;">База в Києві</h3>
+                        <p style="margin-bottom: 1rem;"><strong>м. Київ, вул. Азербайджанська, 3</strong></p>
+                        <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Працюємо по всій Україні. Після евакуації можемо доставити мотоцикл до сервісу <a href="fibis.html">Fibis</a>.</p>
+                        <a href="https://maps.google.com/?q=50.441072,30.639776" target="_blank" rel="noopener noreferrer" class="clickable-map">
+                            <img src="images/ukraine-contour.svg" alt="Локація MotoEvakuator, Київ">
+                            <div class="map-overlay">
+                                <h4>Відкрити в Google Maps</h4>
+                                <p>вул. Азербайджанська, 3</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ===== FINAL CTA ===== -->
         <section class="final-cta section">
             <div class="container">
                 <h2 class="text-center">Готові довірити нам свій мотоцикл?</h2>
-                <p class="text-center">Зв'яжіться з нами будь-яким зручним способом</p>
-                
-                <a href="tel:+380971008810" class="cta-phone text-center d-block">+380 97 100 88 10</a>
-                
+                <p class="text-center">Зателефонуйте або напишіть у месенджер — розрахуємо вартість за кілька хвилин</p>
+                <a href="tel:+380971008810" class="cta-phone" style="display: block; text-align: center;">+380 97 100 88 10</a>
                 <div class="cta-buttons">
                     <a href="https://t.me/motoyevakuator" class="btn btn-primary btn-lg">Telegram</a>
                     <a href="https://wa.me/380971008810" class="btn btn-ghost btn-lg">WhatsApp</a>
-                    <a href="tel:+380971008810" class="btn btn-ghost btn-lg">Телефон</a>
+                    <a href="gallery.html" class="btn btn-ghost btn-lg">Галерея робіт</a>
                 </div>
             </div>
         </section>
@@ -732,5 +907,21 @@
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/animations.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contact-form');
+            if (!form) return;
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const phone = document.getElementById('phone').value.replace(/\D/g, '');
+                if (phone.length < 10) {
+                    alert('Введіть коректний номер телефону');
+                    return;
+                }
+                alert('Дякуємо! Ми зв\'яжемося з вами найближчим часом.');
+                form.reset();
+            });
+        });
+    </script>
 </body>
 </html>

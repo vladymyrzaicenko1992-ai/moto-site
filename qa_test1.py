@@ -5,9 +5,6 @@ import sys
 
 HTML_FILES = [
     'index.html',
-    'about.html',
-    'services.html',
-    'contacts.html',
     'gallery.html',
     'fibis.html'
 ]

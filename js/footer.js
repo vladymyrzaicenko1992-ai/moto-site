@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <!-- Column 1: Brand -->
                     <div class="footer-column">
                         <a href="index.html" class="footer-logo">
-                            <img src="images/logo.png" alt="MotoEvakuator" height="40">
+                            <img src="images/logo.png" alt="MotoEvakuator" width="120" height="40" decoding="async">
                         </a>
                         <p class="footer-tagline">Ваш мотоцикл у надійних руках</p>
                         <div class="footer-stats">
@@ -33,11 +33,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         <nav class="footer-nav">
                             <ul>
                                 <li><a href="index.html">Головна</a></li>
-                                <li><a href="services.html">Послуги</a></li>
-                                <li><a href="about.html">Про нас</a></li>
+                                <li><a href="index.html#services">Послуги</a></li>
+                                <li><a href="index.html#about">Про нас</a></li>
+                                <li><a href="index.html#contacts">Контакти</a></li>
                                 <li><a href="gallery.html">Галерея</a></li>
                                 <li><a href="fibis.html">Fibis</a></li>
-                                <li><a href="contacts.html">Контакти</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -117,8 +117,11 @@ function addFooterStyles() {
             }
             
             .footer-logo img {
+                display: block;
                 height: 40px;
                 width: auto;
+                max-width: 140px;
+                object-fit: contain;
                 margin-bottom: 16px;
             }
             
