@@ -1,0 +1,48 @@
+# Deploy static content to GitHub Pages (images must be real files, not Git LFS pointers)
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify static images are real files
+        run: |
+          for f in images/logo.png images/hero-main.jpg; do
+            size=$(wc -c < "$f")
+            if [ "$size" -lt 1000 ]; then
+              echo "::error:: $f is $size bytes (Git LFS pointer). Commit real binaries."
+              exit 1
+            fi
+          done
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
