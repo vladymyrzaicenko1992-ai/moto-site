@@ -17,7 +17,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 88px;
+  scroll-padding-top: 72px;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -138,7 +138,7 @@ small {
 }
 
 .section {
-  padding: 80px 0;
+  padding: 40px 0;
 }
 
 .section-dark {
@@ -177,10 +177,10 @@ small {
     scroll-padding-top: 72px;
   }
 
-  .hero-section {
-    padding-top: 72px;
-    min-height: 60vh;
-  }
+.hero-section {
+  padding-top: 72px;
+  padding-bottom: 20px;
+}
 }
 
 /* ===== SERVICES (home page) ===== */

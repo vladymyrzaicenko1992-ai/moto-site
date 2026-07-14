@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <header class="header">
             <div class="container header-container">
                 <a href="index.html" class="header-logo">
-                    <img src="images/logo.png" alt="MotoEvakuator" width="120" height="40" decoding="async">
+                    <img src="images/logo.webp" alt="MotoEvakuator" width="180" height="60" decoding="async">
                 </a>
 
                 <nav class="header-nav desktop-nav">
@@ -156,13 +156,13 @@ function addHeaderStyles() {
                 background-color: var(--surface);
                 border-bottom: 1px solid var(--border);
                 transition: all var(--transition);
-                padding: 16px 0;
+                padding: 10px 0;
             }
 
             .header.scrolled {
                 background-color: rgba(17, 17, 17, 0.95);
                 backdrop-filter: blur(10px);
-                padding: 12px 0;
+                padding: 8px 0;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             }
 
@@ -182,9 +182,9 @@ function addHeaderStyles() {
 
             .header-logo img {
                 display: block;
-                height: 40px;
+                height: 56px;
                 width: auto;
-                max-width: 140px;
+                max-width: 200px;
                 object-fit: contain;
             }
 
@@ -385,7 +385,7 @@ function addHeaderStyles() {
 
             @media (max-width: 768px) {
                 .header-logo img {
-                    height: 32px;
+                    height: 44px;
                 }
             }
         </style>
