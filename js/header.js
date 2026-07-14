@@ -292,7 +292,7 @@ function addHeaderStyles() {
                 right: 0;
                 bottom: 0;
                 background-color: rgba(10, 10, 10, 0.98);
-                z-index: 999;
+                z-index: 1001;
                 opacity: 0;
                 visibility: hidden;
                 transition: all var(--transition);
