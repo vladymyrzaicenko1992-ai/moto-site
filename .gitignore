@@ -1,6 +1,9 @@
 # Игнорируемые файлы и папки
 
-# Резервные копии HTML
+# Резервные копии HTML (в т.ч. старый формат index.html.backup)
+*.html.backup
+*.py
+!scripts/*.py
 *-backup.html
 *backup*.html
 *.backup.html

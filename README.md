@@ -247,3 +247,80 @@ This website was created specifically for MotoEvakuator and contains proprietary
 **🇺🇦 Слава Україні! Героям Слава!**
 
 *Website designed with love for Ukraine and the motorcycle community.*
+
+---
+
+# 🚚 АКТУАЛЬНО (после аудита 2026-09-27)
+
+Раздел выше — история редизайна 2026, часть файлов оттуда уже удалена. Ниже — реальное состояние сайта.
+
+## Реальная структура
+
+```
+├── index.html                     # Главная (hero, услуги, как работаем, ЦІНИ, преимущества, про нас, работы, отзывы, FAQ, Fibis, контакты+форма)
+├── motoevakuator-kiev.html        # Посадочная: мотоэвакуатор Киев
+├── evakuaciya-moto-kiev.html      # Посадочная: эвакуация мото
+├── perevezennya-moto-ukraina.html # Посадочная: межгород
+├── perevezennya-kvadrocikla.html  # Посадочная: квадроциклы / ATV
+├── gallery.html                   # Галерея работ (фильтры + лайтбокс)
+├── fibis.html                     # Партнёрский сервис Fibis
+├── 404.html                       # Кастомная страница 404 (CTA + навигация)
+├── about.html / contacts.html / services.html   # редиректы на якоря главной
+├── css/design-system.css          # Единая дизайн-система
+├── js/header.js | footer.js | animations.js     # Компоненты (меню, футер, анимации)
+├── images/                        # Только используемые файлы (WebP)
+├── robots.txt | sitemap.xml
+└── .github/workflows/static.yml   # Автодеплой на GitHub Pages
+```
+
+## 📩 Заявки с формы — куда они уходят
+
+Форма на главной (`#contact-form`) раньше только показывала `alert` и НЕ отправляла данные.
+Сейчас логика такая (скрипт в конце `index.html`, объект `LEAD`):
+
+1. **Если `LEAD.endpoint` заполнен** (Formspree / n8n / свой webhook / CRM):
+   заявка уходит туда POST-запросом с JSON `{name, phone, message, page}`,
+   клиент видит подтверждение. Если запрос упал — срабатывает резервный канал.
+2. **Если `LEAD.endpoint` пустой**: заявка формируется и открывается в WhatsApp
+   (`wa.me`) уже готовым текстом, рядом показаны Telegram, звонок и e-mail.
+
+Чтобы включить автоматическую отправку, нужно только вписать URL:
+
+```js
+const LEAD = {
+  endpoint: 'https://formspree.io/f/xxxxxxxx',  // ← сюда
+  ...
+};
+```
+
+Есть honeypot-поле `#company` для отсечения ботов.
+
+## 🖼 Картинки
+
+- Фон первого экрана: `images/hero-main-1200.webp` (92 КБ) для десктопа и
+  `images/hero-main-800.webp` (44 КБ) для телефонов — задаётся в
+  `css/design-system.css` (`.hero-section` + `@media max-width:768px`) и
+  предзагружается через `<link rel="preload">` в `index.html`.
+- `images/Fibis.webp` — фон страницы Fibis.
+- Все галерейные картинки — WebP, `loading="lazy"`, с проставленными `width/height`.
+
+**Если меняете hero — не возвращайте PNG/JPG.** Старый `hero-main.jpg` был PNG на 1.33 МБ.
+
+## 🚀 Деплой
+
+- Ветка: `main`. Push → GitHub Actions (`.github/workflows/static.yml`) → GitHub Pages.
+- CI проверяет, что `images/logo.webp`, `images/hero-main-1200.webp`, `images/hero-main-800.webp`
+  существуют и весят больше 1 КБ (защита от Git LFS-указателей).
+
+## ✅ Как проверить после деплоя
+
+```bash
+# 1) Фон первого экрана весит ~92 КБ, а не мегабайт
+curl -sI https://motoevakuator.shop/images/hero-main-1200.webp | head -3
+
+# 2) В CSS нет ссылок на старые тяжёлые файлы
+curl -s https://motoevakuator.shop/css/design-system.css | grep -c "hero-main.jpg"
+
+# 3) Кастомная 404 отдаётся
+curl -s https://motoevakuator.shop/несуществующая-страница | grep -c "ПОМИЛКА 404"
+```

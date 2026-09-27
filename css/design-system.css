@@ -160,7 +160,7 @@ small {
   background-color: #0a0a0a;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url('../images/hero-main.jpg');
+    url('../images/hero-main-1200.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -169,7 +169,7 @@ small {
 .hero-section--fibis {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url('../images/Fibis.png');
+    url('../images/Fibis.webp');
 }
 
 @media (max-width: 768px) {
@@ -180,6 +180,10 @@ small {
 .hero-section {
   padding-top: 72px;
   padding-bottom: 20px;
+  /* Лёгкий фон для телефонов: тот же кадр 800px вместо 1184px */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url('../images/hero-main-800.webp');
 }
 }
 
@@ -941,4 +945,56 @@ small {
   .mt-6 { margin-top: 16px; }
   .mb-6 { margin-bottom: 16px; }
   .gap-6 { gap: 12px; }
+}
+
+/* ============================================================
+   Статус отправки заявки (contact form) + компактные кнопки
+   ============================================================ */
+.lead-status {
+  margin-top: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.lead-status:empty {
+  margin-top: 0;
+}
+
+.lead-status__ok {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  margin: 0 0 10px;
+}
+
+.lead-status__err {
+  padding: 10px 14px;
+  border: 1px solid #7a2b2b;
+  border-left: 3px solid #d9534f;
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  margin: 0;
+}
+
+.lead-status__hint {
+  color: var(--text-dim);
+  margin: 0 0 10px;
+  font-size: 0.875rem;
+}
+
+.lead-status__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 10px;
+}
+
+.btn-sm {
+  padding: 8px 14px;
+  font-size: 0.875rem;
+  line-height: 1.2;
 }

@@ -29,7 +29,11 @@ jobs:
 
       - name: Verify static images are real files
         run: |
-          for f in images/logo.png images/hero-main.jpg; do
+          for f in images/logo.webp images/hero-main-1200.webp images/hero-main-800.webp; do
+            if [ ! -f "$f" ]; then
+              echo "::error:: $f is missing — hero/logo assets are required."
+              exit 1
+            fi
             size=$(wc -c < "$f")
             if [ "$size" -lt 1000 ]; then
               echo "::error:: $f is $size bytes (Git LFS pointer). Commit real binaries."
