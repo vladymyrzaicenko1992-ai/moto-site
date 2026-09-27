@@ -12,6 +12,37 @@ document.addEventListener('DOMContentLoaded', function() {
                           'perevezennya-moto-ukraina', 'perevezennya-kvadrocikla'];
     const isServicePage = servicePages.indexOf(currentPage) !== -1;
 
+    const mobileOverlayHTML = `
+            <div class="mobile-nav-overlay">
+                <div class="mobile-nav-container">
+                    <button class="mobile-close" aria-label="Закрити меню">×</button>
+                    <nav class="mobile-nav">
+                        <ul>
+                            <li><a href="index.html" class="mobile-nav-link ${currentPage === 'index' ? 'active' : ''}">Головна</a></li>
+                            <li class="mobile-nav-group">
+                                <span class="mobile-nav-heading">Послуги</span>
+                                <ul class="mobile-nav-sublist">
+                                    <li><a href="motoevakuator-kiev.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'motoevakuator-kiev' ? 'active' : ''}">Мотоэвакуатор Київ</a></li>
+                                    <li><a href="evakuaciya-moto-kiev.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'evakuaciya-moto-kiev' ? 'active' : ''}">Евакуація мото</a></li>
+                                    <li><a href="perevezennya-moto-ukraina.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-moto-ukraina' ? 'active' : ''}">Перевезення по Україні</a></li>
+                                    <li><a href="perevezennya-kvadrocikla.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-kvadrocikla' ? 'active' : ''}">Квадроцикли та ATV</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="${homePrefix}#prices" class="mobile-nav-link mobile-nav-anchor">Ціни</a></li>
+                            <li><a href="${homePrefix}#about" class="mobile-nav-link mobile-nav-anchor">Про нас</a></li>
+                            <li><a href="${homePrefix}#contacts" class="mobile-nav-link mobile-nav-anchor">Контакти</a></li>
+                            <li><a href="gallery.html" class="mobile-nav-link ${currentPage === 'gallery' ? 'active' : ''}">Галерея</a></li>
+                            <li><a href="fibis.html" class="mobile-nav-link ${currentPage === 'fibis' ? 'active' : ''}">Fibis</a></li>
+                        </ul>
+                    </nav>
+                    <div class="mobile-contact">
+                        <a href="tel:+380971008810" class="mobile-phone">+380 97 100 88 10</a>
+                        <a href="tel:+380971008810" class="btn btn-primary">Замовити перевезення</a>
+                    </div>
+                </div>
+            </div>
+    `;
+
     const headerHTML = `
         <header class="header">
             <div class="container header-container">
@@ -58,38 +89,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 </button>
             </div>
 
-            <div class="mobile-nav-overlay">
-                <div class="mobile-nav-container">
-                    <button class="mobile-close" aria-label="Закрити меню">×</button>
-                    <nav class="mobile-nav">
-                        <ul>
-                            <li><a href="index.html" class="mobile-nav-link ${currentPage === 'index' ? 'active' : ''}">Головна</a></li>
-                            <li class="mobile-nav-group">
-                                <span class="mobile-nav-heading">Послуги</span>
-                                <ul class="mobile-nav-sublist">
-                                    <li><a href="motoevakuator-kiev.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'motoevakuator-kiev' ? 'active' : ''}">Мотоэвакуатор Київ</a></li>
-                                    <li><a href="evakuaciya-moto-kiev.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'evakuaciya-moto-kiev' ? 'active' : ''}">Евакуація мото</a></li>
-                                    <li><a href="perevezennya-moto-ukraina.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-moto-ukraina' ? 'active' : ''}">Перевезення по Україні</a></li>
-                                    <li><a href="perevezennya-kvadrocikla.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-kvadrocikla' ? 'active' : ''}">Квадроцикли та ATV</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="${homePrefix}#prices" class="mobile-nav-link mobile-nav-anchor">Ціни</a></li>
-                            <li><a href="${homePrefix}#about" class="mobile-nav-link mobile-nav-anchor">Про нас</a></li>
-                            <li><a href="${homePrefix}#contacts" class="mobile-nav-link mobile-nav-anchor">Контакти</a></li>
-                            <li><a href="gallery.html" class="mobile-nav-link ${currentPage === 'gallery' ? 'active' : ''}">Галерея</a></li>
-                            <li><a href="fibis.html" class="mobile-nav-link ${currentPage === 'fibis' ? 'active' : ''}">Fibis</a></li>
-                        </ul>
-                    </nav>
-                    <div class="mobile-contact">
-                        <a href="tel:+380971008810" class="mobile-phone">+380 97 100 88 10</a>
-                        <a href="tel:+380971008810" class="btn btn-primary">Замовити перевезення</a>
-                    </div>
-                </div>
-            </div>
         </header>
     `;
 
     headerMount.innerHTML = headerHTML;
+
+    // Оверлей меню держим ВНЕ <header>: у .header.scrolled есть backdrop-filter,
+    // а он делает элемент containing block для position:fixed — из-за этого
+    // оверлей сжимался до высоты шапки и меню «не открывалось» после прокрутки.
+    document.body.insertAdjacentHTML('beforeend', mobileOverlayHTML);
+
     initHeader();
 });
 
