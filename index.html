@@ -641,6 +641,25 @@
                 <div class="grid grid-2 price-grid">
                     <div class="card reveal" style="margin: 0;">
                         <h3>Калькулятор вартості</h3>
+                        <label for="calc-city" class="form-label">Оберіть напрямок від Києва</label>
+                        <select id="calc-city" class="form-input" style="margin-bottom: 14px;">
+                            <option value="">— місто або введіть км вручну —</option>
+                            <option value="85">Біла Церква — 85 км</option>
+                            <option value="140">Житомир — 140 км</option>
+                            <option value="150">Чернігів — 150 км</option>
+                            <option value="190">Черкаси — 190 км</option>
+                            <option value="210">Умань — 210 км</option>
+                            <option value="265">Вінниця — 265 км</option>
+                            <option value="327">Рівне — 327 км</option>
+                            <option value="335">Суми — 335 км</option>
+                            <option value="343">Полтава — 343 км</option>
+                            <option value="373">Кропивницький — 373 км</option>
+                            <option value="475">Одеса — 475 км</option>
+                            <option value="481">Харків — 481 км</option>
+                            <option value="483">Дніпро — 483 км</option>
+                            <option value="540">Львів — 540 км</option>
+                            <option value="554">Запоріжжя — 554 км</option>
+                        </select>
                         <label for="calc-km" class="form-label">Відстань в один бік, км</label>
                         <input type="number" id="calc-km" class="form-input" min="1" max="3000" step="5" inputmode="numeric" placeholder="Наприклад, 350">
                         <div id="calc-out" class="calc-out" role="status" aria-live="polite"></div>
@@ -685,6 +704,13 @@
                     <p style="margin-top: 1rem; font-size: 0.9375rem; color: var(--text-dim);">
                         Або заповніть <a href="#contacts">форму заявки</a> — відповімо з розрахунком.
                     </p>
+                    <div class="seo-links" style="margin-top: 1.25rem; justify-content: center;">
+                        <a href="cina-perevezennia-moto.html" class="btn btn-ghost btn-sm">Усі ціни та таблиця напрямків</a>
+                        <a href="perevezennya-moto-kyiv-lviv.html" class="btn btn-ghost btn-sm">Київ — Львів</a>
+                        <a href="perevezennya-moto-kyiv-odesa.html" class="btn btn-ghost btn-sm">Київ — Одеса</a>
+                        <a href="perevezennya-moto-kyiv-kharkiv.html" class="btn btn-ghost btn-sm">Київ — Харків</a>
+                        <a href="perevezennya-moto-kyiv-dnipro.html" class="btn btn-ghost btn-sm">Київ — Дніпро</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -944,6 +970,26 @@
                             <div id="lead-status" class="lead-status" role="status" aria-live="polite"></div>
                             <p style="margin-top: 1rem; font-size: 0.8125rem; color: var(--text-dim);">Або напишіть нам: <a href="https://wa.me/380971008810" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://t.me/motoyevakuator" target="_blank" rel="noopener">Telegram</a> · <a href="mailto:info@motoevakuator.shop">info@motoevakuator.shop</a></p>
                         </form>
+
+                        <!-- Форма обратного звонка -->
+                        <form class="callback-form" id="callback-form">
+                            <h4 style="margin: 1.75rem 0 0.75rem;">Передзвоніть мені</h4>
+                            <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9375rem;">
+                                Залиште номер — зателефонуємо, підкажемо вартість і час подачі.
+                            </p>
+                            <div class="form-group">
+                                <label for="cb-name" class="form-label">Ім'я</label>
+                                <input type="text" id="cb-name" class="form-input cb-name" required placeholder="Ваше ім'я">
+                            </div>
+                            <div class="form-group">
+                                <label for="cb-phone" class="form-label">Телефон</label>
+                                <input type="tel" id="cb-phone" class="form-input cb-phone" required placeholder="+380 __ ___ __ __">
+                            </div>
+                            <input type="text" class="cb-company" tabindex="-1" autocomplete="off"
+                                   style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true">
+                            <button type="submit" class="btn btn-ghost" style="width: 100%;">Передзвоніть мені</button>
+                            <div class="lead-status" role="status" aria-live="polite"></div>
+                        </form>
                     </div>
                     <div>
                         <h3 style="margin-bottom: 1rem;">База в Києві</h3>
@@ -973,6 +1019,7 @@
                         <a href="tel:+380971008810" class="btn btn-primary btn-lg">Зателефонувати</a>
                         <a href="https://t.me/motoyevakuator" class="btn btn-ghost btn-lg">Telegram</a>
                         <a href="https://wa.me/380971008810" class="btn btn-ghost btn-lg">WhatsApp</a>
+                        <a href="viber://chat?number=%2B380971008810" class="btn btn-ghost btn-lg">Viber</a>
                     </div>
                 </div>
             </div>
@@ -986,149 +1033,7 @@
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/animations.js"></script>
-    <script>
-    /* ============================================================
-       ОТПРАВКА ЗАЯВКИ (не теряем лида)
-       ------------------------------------------------------------
-       LEAD.endpoint — если заполнить URL (Formspree / n8n / свой webhook / CRM),
-       заявка уйдёт туда автоматически и клиент увидит благодарность.
-       Если endpoint пустой — заявка открывается в WhatsApp уже готовым текстом,
-       остальные каналы (Telegram, звонок, email) показаны рядом как запасные.
-       ============================================================ */
-    const LEAD = {
-      endpoint: '',                                   // пример: 'https://formspree.io/f/xxxxxxxx'
-      phone: '+380971008810',
-      phoneHuman: '+380 97 100 88 10',
-      telegram: 'https://t.me/motoyevakuator',
-      whatsapp: '380971008810',
-      email: 'info@motoevakuator.shop'
-    };
+<script src="js/lead-forms.js"></script>
 
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.getElementById('contact-form');
-      if (!form) return;
-      const status = document.getElementById('lead-status');
-
-      function buildText(d) {
-        return 'Заявка з сайту motoevakuator.shop\n' +
-               'Ім\'я: ' + d.name + '\n' +
-               'Телефон: ' + d.phone + '\n' +
-               'Повідомлення: ' + d.message + '\n' +
-               'Сторінка: ' + location.href;
-      }
-
-      function show(html) { if (status) status.innerHTML = html; }
-
-      function fallbackBlock(text) {
-        const wa = 'https://wa.me/' + LEAD.whatsapp + '?text=' + encodeURIComponent(text);
-        const mail = 'mailto:' + LEAD.email + '?subject=' + encodeURIComponent('Заявка з сайту') +
-                     '&body=' + encodeURIComponent(text);
-        return '<p class="lead-status__ok"><strong>Заявку сформовано.</strong> ' +
-               'Натисніть «Надіслати» у вікні WhatsApp, що відкрилося, — і ми одразу її побачимо.</p>' +
-               '<p class="lead-status__hint">WhatsApp не відкрився? Скористайтеся іншим каналом:</p>' +
-               '<p class="lead-status__links">' +
-               '<a class="btn btn-primary btn-sm" href="' + wa + '" target="_blank" rel="noopener">Відкрити WhatsApp</a>' +
-               '<a class="btn btn-ghost btn-sm" href="' + LEAD.telegram + '" target="_blank" rel="noopener">Telegram</a>' +
-               '<a class="btn btn-ghost btn-sm" href="tel:' + LEAD.phone + '">Зателефонувати ' + LEAD.phoneHuman + '</a>' +
-               '<a class="btn btn-ghost btn-sm" href="' + mail + '">Email</a>' +
-               '</p>' +
-               '<p class="lead-status__hint">Ваші дані збережено у формі' +
-               ' — якщо сторінка перезавантажиться, їх не доведеться вводити заново.</p>';
-      }
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const name = (document.getElementById('name').value || '').trim();
-        const phoneRaw = (document.getElementById('phone').value || '').trim();
-        const message = (document.getElementById('message').value || '').trim();
-        const honey = (document.getElementById('company') || {}).value || '';
-
-        if (name.length < 2) { show('<p class="lead-status__err">Будь ласка, вкажіть ім\'я.</p>'); return; }
-        const digits = phoneRaw.replace(/\D/g, '');
-        if (digits.length < 10) { show('<p class="lead-status__err">Вкажіть коректний номер телефону, наприклад ' + LEAD.phoneHuman + '</p>'); return; }
-        if (message.length < 3) { show('<p class="lead-status__err">Опишіть, будь ласка, що потрібно перевезти.</p>'); return; }
-
-        const data = { name: name, phone: phoneRaw, message: message, page: location.href };
-        const text = buildText(data);
-
-        if (honey) { return; }   // ловушка для ботов
-
-        // 1) Если настроен endpoint — отправляем туда
-        if (LEAD.endpoint) {
-          show('<p class="lead-status__hint">Надсилаємо…</p>');
-          fetch(LEAD.endpoint, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify(data)
-          }).then(function (r) {
-            if (!r.ok) throw new Error('HTTP ' + r.status);
-            form.reset();
-            show('<p class="lead-status__ok"><strong>Дякуємо, ' + name + '!</strong> Заявку прийнято. ' +
-                 'Ми зателефонуємо на ' + phoneRaw + ' найближчим часом.</p>');
-          }).catch(function () {
-            show(fallbackBlock(text));
-            window.open('https://wa.me/' + LEAD.whatsapp + '?text=' + encodeURIComponent(text), '_blank');
-          });
-          return;
-        }
-
-        // 2) Без endpoint — передаём заявку через WhatsApp (гарантированный канал)
-        show(fallbackBlock(text));
-        window.open('https://wa.me/' + LEAD.whatsapp + '?text=' + encodeURIComponent(text), '_blank');
-      });
-    });
-    </script>
-
-    <script>
-    /* ============================================================
-       Калькулятор вартості: 25 грн/км, відстань рахуємо в обидві сторони
-       ============================================================ */
-    const PRICE = {
-      perKm: 25,            // грн за кілометр
-      roundTrip: true,      // рахуємо дорогу туди й назад
-      phone: '+380971008810',
-      phoneHuman: '+380 97 100 88 10',
-      whatsapp: '380971008810',
-      telegram: 'https://t.me/motoyevakuator'
-    };
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const input = document.getElementById('calc-km');
-      const out = document.getElementById('calc-out');
-      if (!input || !out) return;
-
-      function money(n) {
-        return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' грн';
-      }
-
-      function render() {
-        const km = parseInt(input.value, 10);
-        if (!km || km < 1) {
-          out.innerHTML = '<p class="calc-out__err">Вкажіть відстань в один бік — і побачите вартість.</p>';
-          return;
-        }
-        if (km > 3000) {
-          out.innerHTML = '<p class="calc-out__err">Перевірте відстань: максимум 3000 км в один бік.</p>';
-          return;
-        }
-        const totalKm = PRICE.roundTrip ? km * 2 : km;
-        const sum = totalKm * PRICE.perKm;
-        const waText = 'Доброго дня! Розрахунок з сайту: відстань ' + km + ' км в один бік ' +
-                       '(' + totalKm + ' км зі зворотним), вартість ' + money(sum) + '. Підкажіть, коли можете виїхати?';
-        const wa = 'https://wa.me/' + PRICE.whatsapp + '?text=' + encodeURIComponent(waText);
-        out.innerHTML =
-          '<div class="calc-out__total"><strong>' + money(sum) + '</strong><br>' +
-          '<span class="calc-out__row">' + km + ' км в один бік × 2 = ' + totalKm +
-          ' км × ' + PRICE.perKm + ' грн</span></div>' +
-          '<p style="margin:12px 0 0;"><a class="btn btn-primary btn-sm" href="' + wa +
-          '" target="_blank" rel="noopener">Замовити за ' + money(sum) + ' у WhatsApp</a> ' +
-          '<a class="btn btn-ghost btn-sm" href="tel:' + PRICE.phone + '">Подзвонити</a></p>';
-      }
-
-      input.addEventListener('input', render);
-      input.addEventListener('change', render);
-      render();
-    });
-    </script>
 </body>
 </html>

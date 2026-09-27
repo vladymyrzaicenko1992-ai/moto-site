@@ -50,6 +50,11 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <li><a href="evakuaciya-moto-kiev.html">Евакуація мото</a></li>
                                 <li><a href="perevezennya-moto-ukraina.html">Перевезення по Україні</a></li>
                                 <li><a href="perevezennya-kvadrocikla.html">Квадроцикли та ATV</a></li>
+                                <li><a href="cina-perevezennia-moto.html">Ціна перевезення</a></li>
+                                <li><a href="perevezennya-moto-kyiv-lviv.html">Київ — Львів</a></li>
+                                <li><a href="perevezennya-moto-kyiv-odesa.html">Київ — Одеса</a></li>
+                                <li><a href="perevezennya-moto-kyiv-kharkiv.html">Київ — Харків</a></li>
+                                <li><a href="perevezennya-moto-kyiv-dnipro.html">Київ — Дніпро</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -96,14 +101,27 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initStickyCall() {
-    if (document.querySelector('.sticky-call')) return;
+    if (document.querySelector('.sticky-bar')) return;
 
-    const link = document.createElement('a');
-    link.href = 'tel:+380971008810';
-    link.className = 'sticky-call';
-    link.setAttribute('aria-label', 'Зателефонувати +380 97 100 88 10');
-    link.innerHTML = '<span class="sticky-call-icon" aria-hidden="true">📞</span><span class="sticky-call-text">+380 97 100 88 10</span>';
-    document.body.appendChild(link);
+    const PHONE = '+380971008810';
+    const PHONE_H = '+380 97 100 88 10';
+    const WA = 'https://wa.me/380971008810?text=' +
+        encodeURIComponent('Доброго дня! Потрібне перевезення мотоцикла. Маршрут і марка мото: ');
+    const VIBER = 'viber://chat?number=%2B380971008810';
+    const TG = 'https://t.me/motoyevakuator';
+
+    const bar = document.createElement('div');
+    bar.className = 'sticky-bar';
+    bar.innerHTML =
+        '<a class="sticky-bar__item sticky-bar__item--call" href="tel:' + PHONE + '" aria-label="Зателефонувати ' + PHONE_H + '">' +
+          '<span class="sticky-bar__icon" aria-hidden="true">\uD83D\uDCDE</span><span class="sticky-bar__label">\u0414\u0437\u0432\u0456\u043D\u043E\u043A</span></a>' +
+        '<a class="sticky-bar__item" href="' + WA + '" target="_blank" rel="noopener" aria-label="WhatsApp">' +
+          '<span class="sticky-bar__icon" aria-hidden="true">\uD83D\uDCAC</span><span class="sticky-bar__label">WhatsApp</span></a>' +
+        '<a class="sticky-bar__item" href="' + VIBER + '" aria-label="Viber">' +
+          '<span class="sticky-bar__icon" aria-hidden="true">\uD83D\uDCF1</span><span class="sticky-bar__label">Viber</span></a>' +
+        '<a class="sticky-bar__item" href="' + TG + '" target="_blank" rel="noopener" aria-label="Telegram">' +
+          '<span class="sticky-bar__icon" aria-hidden="true">\u2708\uFE0F</span><span class="sticky-bar__label">Telegram</span></a>';
+    document.body.appendChild(bar);
 }
 
 /**

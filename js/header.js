@@ -26,9 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <li><a href="evakuaciya-moto-kiev.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'evakuaciya-moto-kiev' ? 'active' : ''}">Евакуація мото</a></li>
                                     <li><a href="perevezennya-moto-ukraina.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-moto-ukraina' ? 'active' : ''}">Перевезення по Україні</a></li>
                                     <li><a href="perevezennya-kvadrocikla.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-kvadrocikla' ? 'active' : ''}">Квадроцикли та ATV</a></li>
+                                    <li><a href="cina-perevezennia-moto.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'cina-perevezennya-moto' || currentPage === 'cina-perevezennia-moto' ? 'active' : ''}">Ціна перевезення — 25 грн/км</a></li>
+                                    <li><a href="perevezennya-moto-kyiv-lviv.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-moto-kyiv-lviv' ? 'active' : ''}">Київ — Львів</a></li>
+                                    <li><a href="perevezennya-moto-kyiv-odesa.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-moto-kyiv-odesa' ? 'active' : ''}">Київ — Одеса</a></li>
+                                    <li><a href="perevezennya-moto-kyiv-kharkiv.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-moto-kyiv-kharkiv' ? 'active' : ''}">Київ — Харків</a></li>
+                                    <li><a href="perevezennya-moto-kyiv-dnipro.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-moto-kyiv-dnipro' ? 'active' : ''}">Київ — Дніпро</a></li>
                                 </ul>
                             </li>
-                            <li><a href="${homePrefix}#prices" class="mobile-nav-link mobile-nav-anchor">Ціни</a></li>
+                            <li><a href="cina-perevezennia-moto.html" class="mobile-nav-link">Ціни</a></li>
                             <li><a href="${homePrefix}#about" class="mobile-nav-link mobile-nav-anchor">Про нас</a></li>
                             <li><a href="${homePrefix}#contacts" class="mobile-nav-link mobile-nav-anchor">Контакти</a></li>
                             <li><a href="gallery.html" class="mobile-nav-link ${currentPage === 'gallery' ? 'active' : ''}">Галерея</a></li>
@@ -61,6 +66,12 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <li><a href="evakuaciya-moto-kiev.html" class="nav-dropdown__link">Евакуація мото</a></li>
                                     <li><a href="perevezennya-moto-ukraina.html" class="nav-dropdown__link">Перевезення по Україні</a></li>
                                     <li><a href="perevezennya-kvadrocikla.html" class="nav-dropdown__link">Квадроцикли та ATV</a></li>
+                                    <li class="nav-dropdown__sep" role="presentation"></li>
+                                    <li><a href="cina-perevezennia-moto.html" class="nav-dropdown__link">Ціна перевезення — 25 грн/км</a></li>
+                                    <li><a href="perevezennya-moto-kyiv-lviv.html" class="nav-dropdown__link">Київ — Львів</a></li>
+                                    <li><a href="perevezennya-moto-kyiv-odesa.html" class="nav-dropdown__link">Київ — Одеса</a></li>
+                                    <li><a href="perevezennya-moto-kyiv-kharkiv.html" class="nav-dropdown__link">Київ — Харків</a></li>
+                                    <li><a href="perevezennya-moto-kyiv-dnipro.html" class="nav-dropdown__link">Київ — Дніпро</a></li>
                                 </ul>
                             </details>
                         </li>
@@ -71,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 <nav class="header-nav desktop-nav header-subnav" aria-label="Розділи сторінки">
                     <ul>
-                        <li><a href="${homePrefix}#prices" class="nav-link nav-link-sub">Ціни</a></li>
+                        <li><a href="cina-perevezennia-moto.html" class="nav-link nav-link-sub">Ціни</a></li>
                         <li><a href="${homePrefix}#about" class="nav-link nav-link-sub">Про нас</a></li>
                         <li><a href="${homePrefix}#contacts" class="nav-link nav-link-sub">Контакти</a></li>
                     </ul>
@@ -327,6 +338,12 @@ function addHeaderStyles() {
 
             .nav-dropdown__list li {
                 margin: 0;
+            }
+
+            .nav-dropdown__sep {
+                height: 1px;
+                margin: 6px 12px;
+                background-color: var(--border);
             }
 
             .nav-dropdown__link {
