@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <li><a href="perevezennya-moto-kyiv-odesa.html">Київ — Одеса</a></li>
                                 <li><a href="perevezennya-moto-kyiv-kharkiv.html">Київ — Харків</a></li>
                                 <li><a href="perevezennya-moto-kyiv-dnipro.html">Київ — Дніпро</a></li>
+                                <li><a href="perevezennya-moto-evropa.html">Перевезення до Європи</a></li>
                             </ul>
                         </nav>
                     </div>

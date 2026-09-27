@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <li><a href="perevezennya-moto-kyiv-odesa.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-moto-kyiv-odesa' ? 'active' : ''}">Київ — Одеса</a></li>
                                     <li><a href="perevezennya-moto-kyiv-kharkiv.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-moto-kyiv-kharkiv' ? 'active' : ''}">Київ — Харків</a></li>
                                     <li><a href="perevezennya-moto-kyiv-dnipro.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-moto-kyiv-dnipro' ? 'active' : ''}">Київ — Дніпро</a></li>
+                                    <li><a href="perevezennya-moto-evropa.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-moto-evropa' ? 'active' : ''}">Перевезення до Європи</a></li>
                                 </ul>
                             </li>
                             <li><a href="cina-perevezennia-moto.html" class="mobile-nav-link">Ціни</a></li>
@@ -72,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <li><a href="perevezennya-moto-kyiv-odesa.html" class="nav-dropdown__link">Київ — Одеса</a></li>
                                     <li><a href="perevezennya-moto-kyiv-kharkiv.html" class="nav-dropdown__link">Київ — Харків</a></li>
                                     <li><a href="perevezennya-moto-kyiv-dnipro.html" class="nav-dropdown__link">Київ — Дніпро</a></li>
+                                    <li><a href="perevezennya-moto-evropa.html" class="nav-dropdown__link">Перевезення до Європи</a></li>
                                 </ul>
                             </details>
                         </li>

@@ -18,7 +18,8 @@ var LEAD = {
 
 var PRICE = {
   perKm: 25,       // грн за кілометр
-  roundTrip: true  // рахуємо дорогу туди й назад
+  roundTrip: true, // рахуємо дорогу туди й назад
+  minSum: 1500     // мінімальна вартість виїзду
 };
 
 (function () {
@@ -57,6 +58,12 @@ var PRICE = {
 
   function show(el, html) { if (el) el.innerHTML = html; }
 
+  function track(name, params) {
+    var extra = { page_path: location.pathname };
+    if (params) { for (var k in params) { if (Object.prototype.hasOwnProperty.call(params, k)) extra[k] = params[k]; } }
+    if (window.track) window.track(name, extra);
+  }
+
   function send(data, statusEl, note) {
     var text = data.text;
     if (LEAD.endpoint) {
@@ -69,14 +76,17 @@ var PRICE = {
         if (!r.ok) throw new Error('HTTP ' + r.status);
         show(statusEl, '<p class="lead-status__ok"><strong>Дякуємо, ' + data.name + '!</strong> ' +
                        'Заявку прийнято, зателефонуємо на ' + data.phone + ' найближчим часом.</p>');
+        track(data.type === 'callback' ? 'callback_submit' : 'lead_submit', { method: 'endpoint' });
         if (data.onSuccess) data.onSuccess();
       }).catch(function () {
         show(statusEl, channelsBlock(text, note));
+        track(data.type === 'callback' ? 'callback_submit' : 'lead_submit', { method: 'whatsapp_fallback' });
         window.open(waLink(text), '_blank');
       });
       return;
     }
     show(statusEl, channelsBlock(text, note));
+    track(data.type === 'callback' ? 'callback_submit' : 'lead_submit', { method: 'whatsapp' });
     window.open(waLink(text), '_blank');
   }
 
@@ -127,7 +137,9 @@ var PRICE = {
   /* ---------- 3. Калькулятор ціни (25 грн/км, туди й назад) ---------- */
   function calcPrice(kmOneWay) {
     var km = PRICE.roundTrip ? kmOneWay * 2 : kmOneWay;
-    return { km: km, sum: km * PRICE.perKm };
+    var raw = km * PRICE.perKm;
+    var min = PRICE.minSum || 0;
+    return { km: km, sum: Math.max(raw, min), raw: raw, minApplied: raw < min };
   }
 
   function initCalculator() {
@@ -149,10 +161,13 @@ var PRICE = {
       var p = calcPrice(km);
       var text = 'Доброго дня! Розрахунок з сайту: ' + km + ' км в один бік (' + p.km +
                  ' км зі зворотним), вартість ' + money(p.sum) + '. Коли можете виїхати?';
+      var detail = p.minApplied
+        ? km + ' км в один бік × 2 = ' + p.km + ' км × ' + PRICE.perKm +
+          ' грн = ' + money(p.raw) + ', застосовано мінімум ' + money(PRICE.minSum)
+        : km + ' км в один бік × 2 = ' + p.km + ' км × ' + PRICE.perKm + ' грн';
       out.innerHTML =
         '<div class="calc-out__total"><strong>' + money(p.sum) + '</strong><br>' +
-        '<span class="calc-out__row">' + km + ' км в один бік × 2 = ' + p.km + ' км × ' +
-        PRICE.perKm + ' грн</span></div>' +
+        '<span class="calc-out__row">' + detail + '</span></div>' +
         '<p style="margin:12px 0 0;">' +
         '<a class="btn btn-primary btn-sm" href="' + waLink(text) + '" target="_blank" rel="noopener">Замовити за ' + money(p.sum) + '</a> ' +
         '<a class="btn btn-ghost btn-sm" href="tel:' + LEAD.phone + '">Подзвонити</a></p>';
@@ -166,7 +181,17 @@ var PRICE = {
       });
     }
     input.addEventListener('input', render);
-    input.addEventListener('change', render);
+    input.addEventListener('change', function () {
+      var km = parseInt(input.value, 10);
+      if (km > 0) track('calc_price', { km_one_way: km });
+      render();
+    });
+    if (city) {
+      city.addEventListener('change', function () {
+        var km = parseInt(input.value, 10);
+        if (km > 0) track('calc_price', { km_one_way: km, source: 'city_select' });
+      });
+    }
     render();
   }
 
