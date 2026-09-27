@@ -309,7 +309,7 @@ const LEAD = {
 ## 🚀 Деплой
 
 - Ветка: `main`. Push → GitHub Actions (`.github/workflows/static.yml`) → GitHub Pages.
-- CI проверяет, что `images/logo.webp`, `images/hero-main-1200.webp`, `images/hero-main-800.webp`
+- CI проверяет, что `images/logo-full.webp`, `images/hero-main-1200.webp`, `images/hero-main-800.webp`
   существуют и весят больше 1 КБ (защита от Git LFS-указателей).
 
 ## ✅ Как проверить после деплоя

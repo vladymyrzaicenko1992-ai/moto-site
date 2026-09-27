@@ -17,7 +17,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 72px;
+  scroll-padding-top: 84px;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -174,7 +174,7 @@ small {
 
 @media (max-width: 768px) {
   html {
-    scroll-padding-top: 72px;
+    scroll-padding-top: 84px;
   }
 
 .hero-section {
@@ -997,4 +997,115 @@ small {
   padding: 8px 14px;
   font-size: 0.875rem;
   line-height: 1.2;
+}
+
+/* ============================================================
+   Блок «Скільки коштує»: формула + калькулятор + таблиця
+   ============================================================ */
+.price-formula {
+  margin: 0 auto 28px;
+  text-align: center;
+  border-left: 3px solid var(--accent);
+}
+
+.price-formula__rate {
+  font-family: var(--font-display, inherit);
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.price-formula__rate span {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin-left: 6px;
+}
+
+.price-formula__rule {
+  margin: 12px 0 8px;
+  font-size: 1.0625rem;
+}
+
+.price-formula__example {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+
+.price-grid {
+  align-items: start;
+}
+
+.calc-out {
+  margin-top: 14px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.calc-out:empty {
+  margin-top: 0;
+}
+
+.calc-out__total {
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(255, 69, 0, 0.18) 0%, var(--surface) 100%);
+  border: 1px solid var(--border);
+}
+
+.calc-out__total strong {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.calc-out__row {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+
+.calc-out__err {
+  color: var(--text-muted);
+}
+
+.calc-hint {
+  margin: 10px 0 0;
+  font-size: 0.8125rem;
+  color: var(--text-dim, var(--text-muted));
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.price-table th,
+.price-table td {
+  padding: 9px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.price-table th {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.price-table td:nth-child(2),
+.price-table td:nth-child(3) {
+  white-space: nowrap;
+}
+
+.price-table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (min-width: 768px) {
+  .grid-2.price-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

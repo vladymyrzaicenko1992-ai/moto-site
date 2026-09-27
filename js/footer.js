@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <!-- Column 1: Brand -->
                     <div class="footer-column">
                         <a href="index.html" class="footer-logo">
-                            <img src="images/logo.webp" alt="MotoEvakuator" width="120" height="40" decoding="async">
+                            <img src="images/logo-full.webp" alt="MotoEvakuator — перевезення мотоциклів по Україні" width="366" height="318" decoding="async">
                         </a>
                         <p class="footer-tagline">Ваш мотоцикл у надійних руках</p>
                         <div class="footer-stats">
@@ -148,9 +148,9 @@ function addFooterStyles() {
             
             .footer-logo img {
                 display: block;
-                height: 40px;
+                height: 56px;
                 width: auto;
-                max-width: 140px;
+                max-width: 190px;
                 object-fit: contain;
                 margin-bottom: 16px;
             }

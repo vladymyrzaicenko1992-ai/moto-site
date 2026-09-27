@@ -7,32 +7,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const currentPage = getCurrentPage();
     const isHome = currentPage === 'index';
+    const homePrefix = isHome ? '' : 'index.html';
+    const servicePages = ['motoevakuator-kiev', 'evakuaciya-moto-kiev',
+                          'perevezennya-moto-ukraina', 'perevezennya-kvadrocikla'];
+    const isServicePage = servicePages.indexOf(currentPage) !== -1;
 
     const headerHTML = `
         <header class="header">
             <div class="container header-container">
                 <a href="index.html" class="header-logo">
-                    <img src="images/logo.webp" alt="MotoEvakuator" width="180" height="60" decoding="async">
+                    <img src="images/logo-mark.webp" alt="MotoEvakuator — перевезення мотоциклів" width="366" height="248" decoding="async">
                 </a>
 
-                <nav class="header-nav desktop-nav">
+                <nav class="header-nav desktop-nav" aria-label="Основна навігація">
                     <ul>
                         <li><a href="index.html" class="nav-link ${currentPage === 'index' ? 'active' : ''}">Головна</a></li>
+                        <li class="nav-dropdown">
+                            <details>
+                                <summary class="nav-link ${isServicePage ? 'active' : ''}">Послуги <span class="nav-caret" aria-hidden="true">▾</span></summary>
+                                <ul class="nav-dropdown__list">
+                                    <li><a href="motoevakuator-kiev.html" class="nav-dropdown__link">Мотоэвакуатор Київ</a></li>
+                                    <li><a href="evakuaciya-moto-kiev.html" class="nav-dropdown__link">Евакуація мото</a></li>
+                                    <li><a href="perevezennya-moto-ukraina.html" class="nav-dropdown__link">Перевезення по Україні</a></li>
+                                    <li><a href="perevezennya-kvadrocikla.html" class="nav-dropdown__link">Квадроцикли та ATV</a></li>
+                                </ul>
+                            </details>
+                        </li>
                         <li><a href="gallery.html" class="nav-link ${currentPage === 'gallery' ? 'active' : ''}">Галерея</a></li>
                         <li><a href="fibis.html" class="nav-link ${currentPage === 'fibis' ? 'active' : ''}">Fibis</a></li>
                     </ul>
                 </nav>
 
-                ${isHome ? `
-                <nav class="header-nav desktop-nav header-subnav" aria-label="Розділи головної">
+                <nav class="header-nav desktop-nav header-subnav" aria-label="Розділи сторінки">
                     <ul>
-                        <li><a href="#services" class="nav-link nav-link-sub">Послуги</a></li>
-                        <li><a href="#prices" class="nav-link nav-link-sub">Ціни</a></li>
-                        <li><a href="#about" class="nav-link nav-link-sub">Про нас</a></li>
-                        <li><a href="#contacts" class="nav-link nav-link-sub">Контакти</a></li>
+                        <li><a href="${homePrefix}#prices" class="nav-link nav-link-sub">Ціни</a></li>
+                        <li><a href="${homePrefix}#about" class="nav-link nav-link-sub">Про нас</a></li>
+                        <li><a href="${homePrefix}#contacts" class="nav-link nav-link-sub">Контакти</a></li>
                     </ul>
                 </nav>
-                ` : ''}
 
                 <div class="header-right">
                     <a href="tel:+380971008810" class="header-phone">+380 97 100 88 10</a>
@@ -52,12 +64,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     <nav class="mobile-nav">
                         <ul>
                             <li><a href="index.html" class="mobile-nav-link ${currentPage === 'index' ? 'active' : ''}">Головна</a></li>
-                            ${isHome ? `
-                            <li><a href="#services" class="mobile-nav-link mobile-nav-anchor">Послуги</a></li>
-                            <li><a href="#prices" class="mobile-nav-link mobile-nav-anchor">Ціни</a></li>
-                            <li><a href="#about" class="mobile-nav-link mobile-nav-anchor">Про нас</a></li>
-                            <li><a href="#contacts" class="mobile-nav-link mobile-nav-anchor">Контакти</a></li>
-                            ` : ''}
+                            <li class="mobile-nav-group">
+                                <span class="mobile-nav-heading">Послуги</span>
+                                <ul class="mobile-nav-sublist">
+                                    <li><a href="motoevakuator-kiev.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'motoevakuator-kiev' ? 'active' : ''}">Мотоэвакуатор Київ</a></li>
+                                    <li><a href="evakuaciya-moto-kiev.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'evakuaciya-moto-kiev' ? 'active' : ''}">Евакуація мото</a></li>
+                                    <li><a href="perevezennya-moto-ukraina.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-moto-ukraina' ? 'active' : ''}">Перевезення по Україні</a></li>
+                                    <li><a href="perevezennya-kvadrocikla.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-kvadrocikla' ? 'active' : ''}">Квадроцикли та ATV</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="${homePrefix}#prices" class="mobile-nav-link mobile-nav-anchor">Ціни</a></li>
+                            <li><a href="${homePrefix}#about" class="mobile-nav-link mobile-nav-anchor">Про нас</a></li>
+                            <li><a href="${homePrefix}#contacts" class="mobile-nav-link mobile-nav-anchor">Контакти</a></li>
                             <li><a href="gallery.html" class="mobile-nav-link ${currentPage === 'gallery' ? 'active' : ''}">Галерея</a></li>
                             <li><a href="fibis.html" class="mobile-nav-link ${currentPage === 'fibis' ? 'active' : ''}">Fibis</a></li>
                         </ul>
@@ -138,6 +156,20 @@ function initHeader() {
         });
     }
 
+    // Выпадающее меню «Послуги»: закрываем при клике вне и после перехода
+    document.addEventListener('click', function(e) {
+        document.querySelectorAll('.nav-dropdown details[open]').forEach(function(d) {
+            if (!d.contains(e.target)) d.removeAttribute('open');
+        });
+    });
+
+    document.querySelectorAll('.nav-dropdown__link').forEach(function(a) {
+        a.addEventListener('click', function() {
+            const d = a.closest('details');
+            if (d) d.removeAttribute('open');
+        });
+    });
+
     addHeaderStyles();
 }
 
@@ -182,9 +214,9 @@ function addHeaderStyles() {
 
             .header-logo img {
                 display: block;
-                height: 56px;
+                height: 62px;
                 width: auto;
-                max-width: 200px;
+                max-width: 260px;
                 object-fit: contain;
             }
 
@@ -230,10 +262,110 @@ function addHeaderStyles() {
                 display: none;
             }
 
-            @media (min-width: 1100px) {
+            @media (min-width: 1280px) {
                 .header-subnav {
                     display: block;
                 }
+
+            /* ===== Випадаюче меню «Послуги» ===== */
+            .nav-dropdown {
+                position: relative;
+            }
+
+            .nav-dropdown details {
+                position: relative;
+            }
+
+            .nav-dropdown summary {
+                cursor: pointer;
+                list-style: none;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                padding: 8px 0;
+            }
+
+            .nav-dropdown summary::-webkit-details-marker {
+                display: none;
+            }
+
+            .nav-caret {
+                font-size: 0.6875rem;
+                color: var(--text-muted);
+                transition: transform var(--transition);
+            }
+
+            .nav-dropdown details[open] .nav-caret {
+                transform: rotate(180deg);
+            }
+
+            .header-nav ul.nav-dropdown__list {
+                position: absolute;
+                top: calc(100% + 6px);
+                left: -14px;
+                display: block;
+                gap: 0;
+                min-width: 245px;
+                margin: 0;
+                padding: 8px 0;
+                list-style: none;
+                background-color: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: var(--radius);
+                box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5);
+                z-index: 1005;
+            }
+
+            .nav-dropdown__list li {
+                margin: 0;
+            }
+
+            .nav-dropdown__link {
+                display: block;
+                padding: 11px 18px;
+                color: var(--text);
+                font-size: 0.9375rem;
+                white-space: nowrap;
+            }
+
+            .nav-dropdown__link:hover {
+                background-color: rgba(255, 69, 0, 0.12);
+                color: var(--accent);
+            }
+
+            /* ===== Група «Послуги» у мобільному меню ===== */
+            .mobile-nav-group {
+                margin-bottom: 22px;
+            }
+
+            .mobile-nav-heading {
+                display: block;
+                margin-bottom: 10px;
+                font-size: 0.75rem;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: var(--text-muted);
+            }
+
+            .mobile-nav-sublist {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .mobile-nav-sublist li {
+                margin-bottom: 12px;
+            }
+
+            .mobile-nav-sublink {
+                font-size: 1.05rem;
+                color: var(--text-muted);
+            }
+
+            .mobile-nav-sublink.active,
+            .mobile-nav-sublink:hover {
+                color: var(--accent);
+            }
 
                 .header-subnav ul {
                     gap: 16px;
@@ -369,7 +501,7 @@ function addHeaderStyles() {
                 margin-bottom: 24px;
             }
 
-            @media (max-width: 1099px) {
+            @media (max-width: 1279px) {
                 .header-nav.desktop-nav:not(.header-subnav) {
                     display: none;
                 }
@@ -385,7 +517,8 @@ function addHeaderStyles() {
 
             @media (max-width: 768px) {
                 .header-logo img {
-                    height: 44px;
+                    height: 54px;
+                    max-width: 210px;
                 }
             }
         </style>

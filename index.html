@@ -27,7 +27,7 @@
         "name": "MotoEvakuator",
         "description": "Мотоэвакуатор у Києві та Україні. Евакуація та перевезення мотоциклів у закритому Ford Transit.",
         "url": "https://motoevakuator.shop",
-        "logo": "https://motoevakuator.shop/images/logo.webp",
+        "logo": "https://motoevakuator.shop/images/logo-full.webp",
         "image": "https://motoevakuator.shop/images/hero-main.webp",
         "telephone": "+380971008810",
         "email": "info@motoevakuator.shop",
@@ -90,7 +90,7 @@
     
     <!-- Design System -->
     <link rel="stylesheet" href="css/design-system.css">
-    <link rel="icon" href="images/logo.webp" type="image/png">
+    <link rel="icon" href="images/logo-full.webp" type="image/png">
     
     <!-- Page-specific styles -->
     <style>
@@ -533,7 +533,7 @@
                             <h3>Міжміське перевезення</h3>
                             <p>Доставка між містами України: Київ, Львів, Одеса, Харків та інші.</p>
                             <ul class="service-features">
-                                <li>Страхування вантажу</li>
+                                <li>Фіксація ременями у 4 точках</li>
                                 <li>Закритий фургон Ford Transit</li>
                                 <li>Фото-звіт про стан</li>
                             </ul>
@@ -621,40 +621,65 @@
             </div>
         </section>
 
-        <!-- ===== PRICE SECTION (вартість за запитом) ===== -->
+        <!-- ===== PRICE SECTION ===== -->
         <section id="prices" class="section">
             <div class="container">
                 <div class="text-center mb-5">
                     <h2>Скільки коштує перевезення мотоцикла?</h2>
-                    <p>Вартість залежить від маршруту та техніки, тому рахуємо її індивідуально — і називаємо до початку роботи</p>
+                    <p>Ставка <strong>25 грн за кілометр</strong>. Відстань рахуємо в обидві сторони — Київ → місто → Київ.</p>
                 </div>
 
-                <div class="grid grid-2" style="gap: 24px;">
-                    <div class="card reveal">
-                        <h3>Маршрут і відстань</h3>
-                        <p>Перевезення в межах Києва, до передмістя або міжміський напрямок (Львів, Одеса, Харків, Дніпро). Ціна залежить від кілометрів і часу в дорозі.</p>
+                <div class="card price-formula reveal">
+                    <div class="price-formula__rate">25 грн<span>/км</span></div>
+                    <p class="price-formula__rule">Формула: <strong>кілометри в один бік × 2 × 25 грн</strong></p>
+                    <p class="price-formula__example">
+                        Наприклад, Київ — Суми ≈ 350 км в один бік.
+                        Рахуємо 700 км: <strong>700 × 25 = 17 500 грн</strong>.
+                    </p>
+                </div>
+
+                <div class="grid grid-2 price-grid">
+                    <div class="card reveal" style="margin: 0;">
+                        <h3>Калькулятор вартості</h3>
+                        <label for="calc-km" class="form-label">Відстань в один бік, км</label>
+                        <input type="number" id="calc-km" class="form-input" min="1" max="3000" step="5" inputmode="numeric" placeholder="Наприклад, 350">
+                        <div id="calc-out" class="calc-out" role="status" aria-live="polite"></div>
+                        <p class="calc-hint">Сума орієнтовна. Остаточну вартість підтверджуємо перед виїздом.</p>
                     </div>
-                    <div class="card reveal">
-                        <h3>Тип і габарити техніки</h3>
-                        <p>Спортбайк, круїзер, важкий турер, скутер, мопед або квадроцикл — для кожного своє кріплення і час на завантаження.</p>
-                    </div>
-                    <div class="card reveal">
-                        <h3>Терміновість і час подачі</h3>
-                        <p>Терміновий виклик, нічний час або вихідні — окремі умови. Уточнюємо їх одразу, під час розрахунку вартості.</p>
-                    </div>
-                    <div class="card reveal">
-                        <h3>Стан мото і місце завантаження</h3>
-                        <p>Чи їде байк своїм ходом, чи потрібне завантаження з вузького двору, підземного паркінгу або після ДТП.</p>
+
+                    <div class="card reveal" style="margin: 0;">
+                        <h3>Популярні напрямки</h3>
+                        <table class="price-table">
+                            <thead><tr><th>Маршрут</th><th>В один бік</th><th>Вартість</th></tr></thead>
+                            <tbody>
+                        <tr><td>Київ — Біла Церква</td><td>85 км</td><td><strong>4 250 грн</strong></td></tr>
+                        <tr><td>Київ — Житомир</td><td>140 км</td><td><strong>7 000 грн</strong></td></tr>
+                        <tr><td>Київ — Чернігів</td><td>150 км</td><td><strong>7 500 грн</strong></td></tr>
+                        <tr><td>Київ — Черкаси</td><td>190 км</td><td><strong>9 500 грн</strong></td></tr>
+                        <tr><td>Київ — Умань</td><td>210 км</td><td><strong>10 500 грн</strong></td></tr>
+                        <tr><td>Київ — Вінниця</td><td>265 км</td><td><strong>13 250 грн</strong></td></tr>
+                        <tr><td>Київ — Рівне</td><td>325 км</td><td><strong>16 250 грн</strong></td></tr>
+                        <tr><td>Київ — Суми</td><td>335 км</td><td><strong>16 750 грн</strong></td></tr>
+                        <tr><td>Київ — Полтава</td><td>345 км</td><td><strong>17 250 грн</strong></td></tr>
+                        <tr><td>Київ — Кропивницький</td><td>375 км</td><td><strong>18 750 грн</strong></td></tr>
+                        <tr><td>Київ — Одеса</td><td>475 км</td><td><strong>23 750 грн</strong></td></tr>
+                        <tr><td>Київ — Харків</td><td>480 км</td><td><strong>24 000 грн</strong></td></tr>
+                        <tr><td>Київ — Дніпро</td><td>485 км</td><td><strong>24 250 грн</strong></td></tr>
+                        <tr><td>Київ — Львів</td><td>540 км</td><td><strong>27 000 грн</strong></td></tr>
+                        <tr><td>Київ — Запоріжжя</td><td>555 км</td><td><strong>27 750 грн</strong></td></tr>
+                            </tbody>
+                        </table>
+                        <p class="calc-hint">Відстані по дорогах — орієнтовні. Точну відстань підтверджуємо при замовленні.</p>
                     </div>
                 </div>
 
                 <div class="text-center reveal" style="margin-top: 2.5rem;">
                     <p style="font-size: 1.125rem; margin-bottom: 1.25rem;">
-                        <strong>Скажіть маршрут і модель — порахуємо вартість за 5 хвилин.</strong>
+                        <strong>Знаєте відстань? Порахуємо точно і узгодимо час подачі.</strong>
                     </p>
                     <div class="cta-buttons">
                         <a href="tel:+380971008810" class="btn btn-primary btn-lg">Зателефонувати +380 97 100 88 10</a>
-                        <a href="https://wa.me/380971008810?text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%9F%D1%96%D0%B4%D0%BA%D0%B0%D0%B6%D1%96%D1%82%D1%8C%2C%20%D0%B1%D1%83%D0%B4%D1%8C%20%D0%BB%D0%B0%D1%81%D0%BA%D0%B0%2C%20%D0%B2%D0%B0%D1%80%D1%82%D1%96%D1%81%D1%82%D1%8C%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%B5%D0%B7%D0%B5%D0%BD%D0%BD%D1%8F%20%D0%BC%D0%BE%D1%82%D0%BE%D1%86%D0%B8%D0%BA%D0%BB%D0%B0.%20%D0%9C%D0%B0%D1%80%D1%88%D1%80%D1%83%D1%82%20%28%D0%B7%D0%B2%D1%96%D0%B4%D0%BA%D0%B8%20%E2%80%94%20%D0%BA%D1%83%D0%B4%D0%B8%29%3A%20...%20%3B%20%D0%BC%D0%BE%D1%82%D0%BE%D1%86%D0%B8%D0%BA%D0%BB%3A%20...%20%3B%20%D0%BA%D0%BE%D0%BB%D0%B8%20%D0%BF%D0%BE%D1%82%D1%80%D1%96%D0%B1%D0%BD%D0%BE%3A%20..." target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Порахувати у WhatsApp</a>
+                        <a href="https://wa.me/380971008810?text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%9F%D0%BE%D1%82%D1%80%D1%96%D0%B1%D0%BD%D0%B5%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%B5%D0%B7%D0%B5%D0%BD%D0%BD%D1%8F%20%D0%BC%D0%BE%D1%82%D0%BE%D1%86%D0%B8%D0%BA%D0%BB%D0%B0.%20%D0%9C%D0%B0%D1%80%D1%88%D1%80%D1%83%D1%82%3A%20..." target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Розрахунок у WhatsApp</a>
                         <a href="https://t.me/motoyevakuator" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Telegram</a>
                     </div>
                     <p style="margin-top: 1rem; font-size: 0.9375rem; color: var(--text-dim);">
@@ -700,8 +725,8 @@
                                 <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z"/>
                             </svg>
                         </div>
-                        <h3>Страхування</h3>
-                        <p>Повне страхування вантажу на всій протяжності маршруту</p>
+                        <h3>Надійне кріплення</h3>
+                        <p>Ремені у 4 точках, м'які прокладки та стопор переднього колеса</p>
                     </div>
                     
                     <div class="card benefit-card reveal">
@@ -840,10 +865,6 @@
                     <div class="faq-item reveal">
                         <div class="faq-question"><span>Як закріплюється мотоцикл?</span><span class="faq-toggle">+</span></div>
                         <div class="faq-answer"><p>Професійні ремені в 4 точках: колеса та рама. Для спортбайків — додатковий захист пластику та фар.</p></div>
-                    </div>
-                    <div class="faq-item reveal">
-                        <div class="faq-question"><span>Чи є страхування?</span><span class="faq-toggle">+</span></div>
-                        <div class="faq-answer"><p>Так, кожне перевезення страхується. Деталі уточнюйте у менеджера.</p></div>
                     </div>
                     <div class="faq-item reveal">
                         <div class="faq-question"><span>Як швидко виїжджаєте на евакуацію?</span><span class="faq-toggle">+</span></div>
@@ -1055,6 +1076,58 @@
         show(fallbackBlock(text));
         window.open('https://wa.me/' + LEAD.whatsapp + '?text=' + encodeURIComponent(text), '_blank');
       });
+    });
+    </script>
+
+    <script>
+    /* ============================================================
+       Калькулятор вартості: 25 грн/км, відстань рахуємо в обидві сторони
+       ============================================================ */
+    const PRICE = {
+      perKm: 25,            // грн за кілометр
+      roundTrip: true,      // рахуємо дорогу туди й назад
+      phone: '+380971008810',
+      phoneHuman: '+380 97 100 88 10',
+      whatsapp: '380971008810',
+      telegram: 'https://t.me/motoyevakuator'
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const input = document.getElementById('calc-km');
+      const out = document.getElementById('calc-out');
+      if (!input || !out) return;
+
+      function money(n) {
+        return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' грн';
+      }
+
+      function render() {
+        const km = parseInt(input.value, 10);
+        if (!km || km < 1) {
+          out.innerHTML = '<p class="calc-out__err">Вкажіть відстань в один бік — і побачите вартість.</p>';
+          return;
+        }
+        if (km > 3000) {
+          out.innerHTML = '<p class="calc-out__err">Перевірте відстань: максимум 3000 км в один бік.</p>';
+          return;
+        }
+        const totalKm = PRICE.roundTrip ? km * 2 : km;
+        const sum = totalKm * PRICE.perKm;
+        const waText = 'Доброго дня! Розрахунок з сайту: відстань ' + km + ' км в один бік ' +
+                       '(' + totalKm + ' км зі зворотним), вартість ' + money(sum) + '. Підкажіть, коли можете виїхати?';
+        const wa = 'https://wa.me/' + PRICE.whatsapp + '?text=' + encodeURIComponent(waText);
+        out.innerHTML =
+          '<div class="calc-out__total"><strong>' + money(sum) + '</strong><br>' +
+          '<span class="calc-out__row">' + km + ' км в один бік × 2 = ' + totalKm +
+          ' км × ' + PRICE.perKm + ' грн</span></div>' +
+          '<p style="margin:12px 0 0;"><a class="btn btn-primary btn-sm" href="' + wa +
+          '" target="_blank" rel="noopener">Замовити за ' + money(sum) + ' у WhatsApp</a> ' +
+          '<a class="btn btn-ghost btn-sm" href="tel:' + PRICE.phone + '">Подзвонити</a></p>';
+      }
+
+      input.addEventListener('input', render);
+      input.addEventListener('change', render);
+      render();
     });
     </script>
 </body>
