@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h3 class="footer-heading">Послуги</h3>
                         <nav class="footer-nav">
                             <ul>
-                                <li><a href="motoevakuator-kiev.html">Мотоэвакуатор Київ</a></li>
+                                <li><a href="motoevakuator-kiev.html">Мотоевакуатор Київ</a></li>
                                 <li><a href="evakuaciya-moto-kiev.html">Евакуація мото</a></li>
                                 <li><a href="perevezennya-moto-ukraina.html">Перевезення по Україні</a></li>
                                 <li><a href="perevezennya-kvadrocikla.html">Квадроцикли та ATV</a></li>
@@ -56,6 +56,14 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <li><a href="perevezennya-moto-kyiv-kharkiv.html">Київ — Харків</a></li>
                                 <li><a href="perevezennya-moto-kyiv-dnipro.html">Київ — Дніпро</a></li>
                                 <li><a href="perevezennya-moto-evropa.html">Перевезення до Європи</a></li>
+                                <li><a href="evakuaciya-moto-pislya-dtp.html">Евакуація після ДТП</a></li>
+                                <li><a href="dostavka-moto-z-salonu.html">Доставка з салону</a></li>
+                                <li><a href="perevezennya-moto-na-zberigannya.html">Перевезення на зберігання</a></li>
+                                <li><a href="perevezennya-skutera-ta-mopeda.html">Скутери та мопеди</a></li>
+                                <li><a href="perevezennya-elektrobayka.html">Електробайки</a></li>
+                                <li><a href="kilka-moto-odnym-rejsom.html">Кілька мото одним рейсом</a></li>
+                                <li><a href="z-pidzemnoho-parkingu.html">З підземного паркінгу</a></li>
+                                <li><a href="novyny.html">Новини</a></li>
                             </ul>
                         </nav>
                     </div>

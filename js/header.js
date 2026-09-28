@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <li class="mobile-nav-group">
                                 <span class="mobile-nav-heading">Послуги</span>
                                 <ul class="mobile-nav-sublist">
-                                    <li><a href="motoevakuator-kiev.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'motoevakuator-kiev' ? 'active' : ''}">Мотоэвакуатор Київ</a></li>
+                                    <li><a href="motoevakuator-kiev.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'motoevakuator-kiev' ? 'active' : ''}">Мотоевакуатор Київ</a></li>
                                     <li><a href="evakuaciya-moto-kiev.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'evakuaciya-moto-kiev' ? 'active' : ''}">Евакуація мото</a></li>
                                     <li><a href="perevezennya-moto-ukraina.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-moto-ukraina' ? 'active' : ''}">Перевезення по Україні</a></li>
                                     <li><a href="perevezennya-kvadrocikla.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-kvadrocikla' ? 'active' : ''}">Квадроцикли та ATV</a></li>
@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <li><a href="perevezennya-moto-kyiv-kharkiv.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-moto-kyiv-kharkiv' ? 'active' : ''}">Київ — Харків</a></li>
                                     <li><a href="perevezennya-moto-kyiv-dnipro.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-moto-kyiv-dnipro' ? 'active' : ''}">Київ — Дніпро</a></li>
                                     <li><a href="perevezennya-moto-evropa.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'perevezennya-moto-evropa' ? 'active' : ''}">Перевезення до Європи</a></li>
+                                    <li><a href="novyny.html" class="mobile-nav-link mobile-nav-sublink ${currentPage === 'novyny' ? 'active' : ''}">Новини</a></li>
                                 </ul>
                             </li>
                             <li><a href="cina-perevezennia-moto.html" class="mobile-nav-link">Ціни</a></li>
@@ -63,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <details>
                                 <summary class="nav-link ${isServicePage ? 'active' : ''}">Послуги <span class="nav-caret" aria-hidden="true">▾</span></summary>
                                 <ul class="nav-dropdown__list">
-                                    <li><a href="motoevakuator-kiev.html" class="nav-dropdown__link">Мотоэвакуатор Київ</a></li>
+                                    <li><a href="motoevakuator-kiev.html" class="nav-dropdown__link">Мотоевакуатор Київ</a></li>
                                     <li><a href="evakuaciya-moto-kiev.html" class="nav-dropdown__link">Евакуація мото</a></li>
                                     <li><a href="perevezennya-moto-ukraina.html" class="nav-dropdown__link">Перевезення по Україні</a></li>
                                     <li><a href="perevezennya-kvadrocikla.html" class="nav-dropdown__link">Квадроцикли та ATV</a></li>
@@ -74,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <li><a href="perevezennya-moto-kyiv-kharkiv.html" class="nav-dropdown__link">Київ — Харків</a></li>
                                     <li><a href="perevezennya-moto-kyiv-dnipro.html" class="nav-dropdown__link">Київ — Дніпро</a></li>
                                     <li><a href="perevezennya-moto-evropa.html" class="nav-dropdown__link">Перевезення до Європи</a></li>
+                                    <li><a href="novyny.html" class="nav-dropdown__link">Новини</a></li>
                                 </ul>
                             </details>
                         </li>
@@ -107,9 +109,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     headerMount.innerHTML = headerHTML;
 
-    // Оверлей меню держим ВНЕ <header>: у .header.scrolled есть backdrop-filter,
-    // а он делает элемент containing block для position:fixed — из-за этого
-    // оверлей сжимался до высоты шапки и меню «не открывалось» после прокрутки.
+    // Оверлей меню тримаємо ПОЗА <header>: у .header.scrolled є backdrop-filter,
+    // а він робить елемент containing block для position:fixed — через це
+    // оверлей стискався до висоти шапки й меню «не відкривалося» після прокрутки.
     document.body.insertAdjacentHTML('beforeend', mobileOverlayHTML);
 
     initHeader();
@@ -178,7 +180,7 @@ function initHeader() {
         });
     }
 
-    // Выпадающее меню «Послуги»: закрываем при клике вне и после перехода
+    // Випадаюче меню «Послуги»: закриваємо при кліку поза ним і після переходу
     document.addEventListener('click', function(e) {
         document.querySelectorAll('.nav-dropdown details[open]').forEach(function(d) {
             if (!d.contains(e.target)) d.removeAttribute('open');

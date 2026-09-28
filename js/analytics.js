@@ -1,20 +1,20 @@
 /* ============================================================
-   MotoEvakuator — аналитика GA4 + отслеживание заявок
+   MotoEvakuator — аналітика GA4 + відстеження заявок
    ------------------------------------------------------------
-   ВСТАВЬТЕ ID счётчика в GA4_ID (вида G-XXXXXXXXXX).
-   Пока значение пустое — скрипт ничего не грузит и не отправляет.
-   События: call_click, whatsapp_click, viber_click, telegram_click,
-            lead_submit, callback_submit, calc_price, route_page_view.
+   ВСТАВТЕ ID лічильника у GA4_ID (вигляду G-XXXXXXXXXX).
+   Поки значення порожнє — скрипт нічого не завантажує й не надсилає.
+   Події: call_click, whatsapp_click, viber_click, telegram_click,
+          lead_submit, callback_submit, calc_price, route_page_view.
    ============================================================ */
-var GA4_ID = '';   // ← пример: 'G-AB12CD34EF'
+var GA4_ID = '';   // ← приклад: 'G-AB12CD34EF'
 
 (function () {
   'use strict';
 
   window.track = window.track || function () {};
 
-  // Клики по каналам связи навешиваем всегда — как только появится GA4_ID,
-  // события начнут уходить. Без ID window.track — пустышка, запросов нет.
+  // Кліки по каналах зв'язку чіпляємо завжди — щойно з'явиться GA4_ID,
+  // події почнуть надсилатися. Без ID window.track — заглушка, запитів немає.
   document.addEventListener('click', function (e) {
     var el = e.target;
     while (el && el.tagName !== 'A' && el !== document.body) el = el.parentElement;
@@ -43,7 +43,7 @@ var GA4_ID = '';   // ← пример: 'G-AB12CD34EF'
     try { gtag('event', name, params || {}); } catch (e) {}
   };
 
-  // Просмотр страниц-маршрутов
+  // Перегляд сторінок-маршрутів
   if (/perevezennya-moto-kyiv-|evropa|cina-perevezennia/.test(location.pathname)) {
     window.track('route_page_view', { page_path: location.pathname });
   }

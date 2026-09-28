@@ -1,10 +1,10 @@
 /* ============================================================
-   MotoEvakuator — заявки, обратный звонок, калькулятор цены
+   MotoEvakuator — заявки, зворотний дзвінок, калькулятор ціни
    ------------------------------------------------------------
-   LEAD.endpoint — если заполнить URL (Formspree / n8n / webhook / CRM),
-   заявки уходят туда POST-ом {name, phone, message, page, type}. Если пусто
-   или запрос упал — заявка открывается в WhatsApp готовым текстом,
-   остальные каналы (Telegram, Viber, звонок, e-mail) показаны рядом.
+   LEAD.endpoint — якщо вказати URL (Formspree / n8n / webhook / CRM),
+   заявки надсилаються туди POST-ом {name, phone, message, page, type}. Якщо пусто
+   або запит не пройшов — заявка відкривається у WhatsApp готовим текстом,
+   інші канали (Telegram, Viber, дзвінок, e-mail) показані поруч.
    ============================================================ */
 var LEAD = {
   endpoint: '',
@@ -114,7 +114,7 @@ var PRICE = {
     });
   }
 
-  /* ---------- 2. Обратный звонок (.callback-form) ---------- */
+  /* ---------- 2. Зворотний дзвінок (.callback-form) ---------- */
   function initCallbackForms() {
     document.querySelectorAll('form.callback-form').forEach(function (form) {
       var status = form.querySelector('.lead-status');
@@ -195,7 +195,7 @@ var PRICE = {
     render();
   }
 
-  /* ---------- 4. Подстановка цены в кнопки «Замовити» ---------- */
+  /* ---------- 4. Підстановка ціни в кнопки «Замовити» ---------- */
   function initRoutePrices() {
     document.querySelectorAll('[data-route-km]').forEach(function (el) {
       var km = parseInt(el.getAttribute('data-route-km'), 10);
